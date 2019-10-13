@@ -2,15 +2,18 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
 |nickname|string|null: false|
-|id|integer|null:false|
+|email|string|null: false|
+|password|string|null: false, unique: true|
+|name|string|null: false|
+|name(katakana)|string|null: false|
+|birthday|date|null: false|
+|tel|integer|null: false, unique: true|
 ### Association
 - has_many :items
 - has_many :comments
 
-## commentsテーブル
+<!-- ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null:false|
@@ -30,4 +33,4 @@
 |id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :tweet
-- belongs_to :user
+- belongs_to :user -->

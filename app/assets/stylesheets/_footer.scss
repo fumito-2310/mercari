@@ -1,0 +1,149 @@
+.bottomAside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  background-image: url('img/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg');
+  background-size: cover;
+}
+
+.smartIcon {
+  height: 100%;
+}
+.bottomAside--info {
+  width: 450px;
+  color: white;
+}
+
+p.up {
+  font-size: 24px;
+}
+
+p.down {
+  font-size: 35px;
+}
+
+.icon-container {
+  height: 68px;
+  display: flex;
+  align-items: center;
+}
+
+.mercariLogo {
+  height: 100%;
+  width: 68px;
+}
+
+.icon-container a{
+  height: 40px;
+  width: 144px;
+  margin-left: 15px;
+}
+
+.appleBtn img {
+  margin-left: 15px;
+  height: 100%;
+  width: 100%;
+}
+
+.googleBtn img {
+  margin-left: 15px;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+footer {
+  height: 40vh;
+  background-color: black;
+}
+
+.footerNav {
+  display: flex;
+  color: white;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 15px; 
+}
+
+.footerNav__about {
+  width: 20%;
+}
+
+.footerNav__about--twitter {
+  float: left;
+}
+
+.footerNav__about--twitter i {
+  margin-top: 20px;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.footerNav__about--facebook i {
+  margin-top: 20px;
+  color: #fff;
+}
+
+.footerNav__help {
+  width: 25%;
+}
+
+.footerNav__privacy {
+  width: 40%;
+}
+
+.footerNav p {
+  margin-bottom: 15px;
+}
+
+.footerNav a {
+  font-size: 12px;
+  margin-bottom: 15px;
+  color: gray;
+  display: block;
+  text-decoration: none;
+}
+
+.footerNav a:hover {
+  text-decoration: underline;
+}
+
+.footerNav a:visited {
+  color: gray;
+}
+
+.footerNav__privacyFrame {
+  display: flex;
+}
+
+.footerNav__privacyFrame--left {
+  width: 60%;
+  margin-right: 20px;
+}
+
+.footerNav__privacyFrame--right {
+  float: right;
+  width: 60%;
+}
+
+.footerNav__country {
+  margin-left: 20px;
+  width: 10%;
+}
+
+.footer__mercari {
+  display: flex;
+  color: white;
+  width: 60%;
+  margin: 0 auto;
+  
+}
+
+.copyright {
+  margin: 0 auto;
+  font-size: 10px;
+  padding-top: 10px;
+  padding-right: 100px;
+}

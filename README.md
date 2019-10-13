@@ -10,8 +10,7 @@
 |birthday|date|null: false|
 |tel|integer|null: false, unique: true|
 ### Association
-- has_many :items
-- has_many :comments
+
 
 <!-- ## commentsテーブル
 |Column|Type|Options|

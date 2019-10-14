@@ -1,0 +1,44 @@
+.signup-header {
+  background-color: #F5F5F5;
+  height: 15vh;
+  position: relative;
+}
+
+.signup-header__link {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  height: 35%;
+}
+
+.signup-header__img {
+  height: 100%;
+  width: 100%;
+}
+
+.signup-main {
+  background-color: #F5F5F5;
+  height: 65vh;
+}
+
+.signup-container {
+  background-color: #FFF;
+  height: 40vh;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.signup-container__header {
+  height: 10vh;
+  border-bottom: solid 1px #F5F5F5;
+}
+
+.signup-container__header p {
+  text-align: center;
+  line-height: 10vh;
+  font-size: 20px;
+  font-weight: bold;
+}

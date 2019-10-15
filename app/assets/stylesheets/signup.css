@@ -27,7 +27,7 @@
 .signup-container {
   background-color: #FFF;
   height: 40vh;
-  width: 60%;
+  width: 45%;
   margin: 0 auto;
 }
 
@@ -41,4 +41,134 @@
   line-height: 10vh;
   font-size: 20px;
   font-weight: bold;
+}
+
+.signup-container__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-container__buttons a {
+  display: block;
+  text-decoration: none;
+  line-height: 5vh;
+  height: 100%;
+  width: 100%;
+}
+
+.signup-container__buttons p {
+  float: right;
+  color: #fff;
+}
+
+.buttons__email {
+  position: relative;
+  height: 5vh;
+  width: 20vw;
+  background-color: red;
+  margin: 0 auto;
+  margin-top: 45px;
+  border-radius: 5px;
+}
+
+.fa-envelope {
+  color: #fff;
+  float: left;
+  height: 50%;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+
+.buttons__email p {
+  margin-right: 4vw;
+}
+
+.buttons__facebook {
+  position: relative;
+  height: 5vh;
+  width: 20vw;
+  background-color:blue;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.fa-facebook-square {
+  color: #fff;
+  float: left;
+  height: 50%;
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+
+.buttons__facebook p {
+  margin-right: 5vw;
+}
+
+
+.buttons__google {
+  position: relative;
+  height: 5vh;
+  width: 20vw;
+  border: solid 0.5px #808000;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.buttons__google p {
+  color: black;
+  margin-right: 6vw;
+}
+
+.buttons__google--logo {
+  float: left;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+
+.signup-footer {
+  height: calc(100vh - 15vh - 65vh);
+  background-color: #F5F5F5;
+}
+
+.signup-footer__rule {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-footer__rule a {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+.signup-footer__logo {
+  height: 60%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.signup-footer__logo a {
+  color: #fff;
+  height: 60%;
+  margin: 0 auto;
+}
+
+.signup-footer__logo img {
+  height: 100%;
+}
+
+.signup-footer__copyRight {
+  text-align: center;
+  font-size: 12px;
 }

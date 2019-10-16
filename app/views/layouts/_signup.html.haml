@@ -1,0 +1,47 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Document
+    %link{:href => "/Users/taishusawaki/projects/freemarket_sample_56a/app/assets/stylesheets/reset.css", :rel => "stylesheet"}/
+    %link{:href => "/Users/taishusawaki/projects/freemarket_sample_56a/app/assets/stylesheets/signup.css", :rel => "stylesheet"}/
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+  %body
+    %header.signup-header
+      %a.signup-header__link{:href => ""}
+        %img.signup-header__img{:alt => "", :src => "/Users/taishusawaki/projects/freemarket_sample_56a/app/assets/images/logo.svg"}/
+    %main.signup-main
+      .signup-container
+        .signup-container__header
+          %p 新規会員登録
+        .signup-container__buttons
+          .buttons__email
+            %a.buttons__email--link{:href => ""}
+              %i.far.fa-envelope.fa-lg
+              %p メールアドレスで登録する
+          .buttons__facebook
+            %a.buttons__facebook--facebook{:href => ""}
+              %i.fab.fa-facebook-square.fa-2x
+              %p Facebookで登録する
+          / facebookログインで使うかも
+          /
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
+            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+          .buttons__google
+            %img.buttons__google--logo{:alt => "", :src => "/Users/taishusawaki/projects/freemarket_sample_56a/app/assets/images/g-logo.png"}/
+            %a.buttons__email--mail{:href => ""}
+              %p Googleで登録する
+    %footer.signup-footer
+      .signup-footer__rule
+        %a{:href => ""} プライバシーポリシー
+        %a{:href => ""} メルカリ利用規約
+        %a{:href => ""} 特定商取引に関する表記
+      .signup-footer__logo
+        %a{:href => ""}
+          %img{:alt => "", :src => "/Users/taishusawaki/projects/freemarket_sample_56a/app/assets/images/logo-gray.svg"}/
+      .signup-footer__copyRight
+        %p © 2019 TeamA

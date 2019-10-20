@@ -2,6 +2,7 @@ class SignupController < ApplicationController
   
   def step1
     @user = User.new # 新規インスタンス作成
+    # binding.pry
   end
 
   def step2
@@ -11,12 +12,16 @@ class SignupController < ApplicationController
     session[:password] = user_params[:password]
     session[:password_confirmation] = user_params[:password_confirmation]
     @user = User.new # 新規インスタンス作成
+    # binding.pry
+
   end
 
   def step3
     # step2で入力された値をsessionに保存
     session[:phone_number] = user_params[:phone_number]
     @user = User.new # 新規インスタンス作成
+    # binding.pry
+
   end
 
   def step4
@@ -32,10 +37,14 @@ class SignupController < ApplicationController
     session[:address_building] = user_params[:address_building]
     session[:address_phone_number] = user_params[:address_phone_number]
     @user = User.new # 新規インスタンス作成
+    # binding.pry
+
   end
 
 
   def create
+    binding.pry
+
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
@@ -75,7 +84,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      render '/signup/registration'
+      render action: "step1.html.haml"
     end
   end
 
@@ -89,10 +98,10 @@ end
 
 
 
-
+private
   def user_params
-    # params.require(:user).permit(
-      params.permit(
+    params.require(:user).permit(
+      # params.permit(
 
       :nickname,
       :email,

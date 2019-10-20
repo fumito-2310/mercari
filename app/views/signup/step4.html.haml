@@ -1,6 +1,6 @@
-= form_for @user, url: signup_index_path, method: :post, html: {class: 'forth-main-wrapper__box'} do |f|
-  = text_field :card_number,
-  = text_field :expiry_date_month,
-  = text_field :expiry_date_year,
-  = text_field :security_code,
+= form_for @user, url: signup_index_path, method: :post, action: "create", html: {class: 'forth-main-wrapper__box'} do |f|
+  = f.text_field :card_number
+  = f.text_field :expiry_date_month
+  = f.text_field :expiry_date_year
+  = f.text_field :security_code
   = f.submit '次へ進む', class: 'register-profile__nextpage'

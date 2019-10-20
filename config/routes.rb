@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'signup#step1'  # devise_for :users
+  devise_for :users
+  # root to: 'devise/registrations#new' 
+   # devise_for :users
   # root  'users#index'
+  
 
   resources :signup do
     collection do

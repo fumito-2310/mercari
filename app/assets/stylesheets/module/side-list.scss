@@ -1,14 +1,7 @@
-.container {
-    padding: 40px auto 0;
-    width: 1020px;
-    &__side {
-        float: left;
-    }
-}
+
 
 .list {
     display: block;
-    width: 280px;
     color: black;
     list-style: none;
     padding: 0 40px 0 0;
@@ -32,4 +25,3 @@
     }
 }
 
-.main-container {}

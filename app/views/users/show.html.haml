@@ -1,9 +1,36 @@
 .container
   .container__side
     = render "side-list"
-  .container__main
-    .container__icon
-      =image_tag /Users/ishikubofumito/projects/mercari/app/assets/images/www.mercari.com:.jpg,size:"680x180"
+  .main
+    .main--icon
+      =link_to "#",class: "main--icon__icon"do
+        %figure.main--icon__icon__figure
+          =image_tag("member_photo_noimage.png",width: "60",height: "60", alt: "サンプル画像")
+        %li.main--inform__tab1
+          =link_to "#",class:"main--inform__tab1__a" do
+            お知らせ
+        %li.main--inform__tab1
+          =link_to "#",class:"main--inform__tab1__a" do
+            やることリスト
+    .main--contents
+      %ul
+        %li.main--contents__tab2
+          =link_to "#",class:"main--inform__tab2__a" do
+            お知らせ
+        %li.main--contents__tab2
+          =link_to "#",class:"main--inform__tab2__a" do
+            お知らせ
+        %li.main--contents__tab2__gray
+          =link_to "#",class:"main--inform__tab2__gray" do
+            一覧をみる     
+    .main--history
+      %h2.top 購入した商品
+      %ul
+        %li.main--history__tab3
+          %h3 取引中
+        %li.main--history__tab3
+          %h3 過去の取引
+    
 
 
       

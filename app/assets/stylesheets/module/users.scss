@@ -5,5 +5,85 @@
 }
 
 .container {
+    width: 1020px;
+    height: 1252px;
+    margin: 40px auto 0;
+    &__side {
+        float: left;
+    }
+}
+
+.container-side {
     margin: 40px 210px;
+}
+
+.main {
+    float: right;
+    width: 700px;
+    .main--icon {
+        height: 200px;
+        width: 700px;
+        position: relative;
+        text-align: center;
+        &__figure {
+            width: 100%;
+            height: 100px;
+            border-radius: 50%;
+        }
+        &__img1 {
+            height: 60px;
+            width: 60px;
+        }
+    }
+}
+
+.main--inform {
+    background-color: white;
+    height: 72px;
+    &__tab1 {
+        width: 50%;
+        display: inline;
+        text-align: center;
+        height: 72px;
+        line-height: 72px;
+        float: right;
+        color: black;
+        &__a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
+
+.main--contents {
+    color: black;
+    &__tab2 {
+        height: 80px;
+        text-align: center;
+        border: 1px solid gray;
+        line-height: 80px;
+        &__gray {
+            background-color: gray;
+            height: 80px;
+            margin: 16px;
+            border: 1px solid gray;
+            text-align: center;
+            line-height: 80px;
+        }
+    }
+}
+
+.main--history {
+    padding-top: 24px;
+    .top {
+        height: 72px;
+        padding: 16px;
+    }
+    &__tab3 {
+        display: inline;
+        float: right;
+        text-align: center;
+        width: 50%;
+        height: 72px;
+    }
 }

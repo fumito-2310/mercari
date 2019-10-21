@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  # root to: 'devise/registrations#new' 
-   # devise_for :users
-  # root  'users#index'
   
+  root to: 'top#index' 
+   get 'top' => 'top#index'
+
+
+   def after_sign_out_path_for(resource)
+    new_user_session_path
+   end
 
   resources :signup do
     collection do

@@ -43,7 +43,7 @@ class SignupController < ApplicationController
 
 
   def create
-    binding.pry
+    # binding.pry
 
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
@@ -54,22 +54,22 @@ class SignupController < ApplicationController
       first_name: session[:first_name], 
       last_name_kana: session[:last_name_kana], 
       first_name_kana: session[:first_name_kana], 
-      birthdate_year: session[:birthdate_year], 
-      birthdate_month: session[:birthdate_month], 
-      birthdate_day: session[:birthdate_day], 
+      # birthdate_year: session[:birthdate_year], 
+      # birthdate_month: session[:birthdate_month], 
+      # birthdate_day: session[:birthdate_day], 
       phone_number: session[:phone_number], 
-      address_last_name: session[:address_last_name], 
-      address_first_name: session[:address_first_name], 
-      address_last_name_kana: session[:address_last_name_kana], 
-      address_first_name_kana: session[:address_first_name_kana], 
+      # address_last_name: session[:address_last_name], 
+      # address_first_name: session[:address_first_name], 
+      # address_last_name_kana: session[:address_last_name_kana], 
+      # address_first_name_kana: session[:address_first_name_kana], 
       address_number: session[:address_number], 
       address_prefecture: session[:address_prefecture], 
       address_name: session[:address_name], 
       address_block: session[:address_block], 
       address_building: session[:address_building], 
       address_phone_number: session[:address_phone_number], 
-      introduce: session[:introduce], 
-      encrypted_password: session[:encrypted_password], 
+      # introduce: session[:introduce], 
+      # encrypted_password: session[:encrypted_password], 
       reset_password_token: session[:reset_password_token], 
       reset_password_sent_at: session[:reset_password_sent_at], 
       remember_created_at: session[:remember_created_at], 
@@ -84,7 +84,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      render action: "step1.html.haml"
+      # render action: "step1.html.haml"
     end
   end
 
@@ -105,26 +105,36 @@ private
 
       :nickname,
       :email,
+      :password,
+      :password_confirmation,
+      :phone_number,
+
+
       :last_name,
       :first_name,
       :last_name_kana,
       :first_name_kana,
-      :birthdate_year,
-      :birthdate_month,
-      :birthdate_day,
-      :phone_number,
-      :address_last_name,
-      :address_first_name,
-      :address_last_name_kana,
-      :address_first_name_kana,
+
+
+      # :birthdate_year,
+      # :birthdate_month,
+      # :birthdate_day,
       :address_number,
       :address_prefecture,
       :address_name,
       :address_block,
       :address_building,
       :address_phone_number,
-      :introduce,
-      :encrypted_password,
+
+
+      # :address_last_name,
+      # :address_first_name,
+      # :address_last_name_kana,
+      # :address_first_name_kana,
+      
+
+      # :introduce,
+      # :encrypted_password,
 
       :card_number,
       :expiry_date_month,

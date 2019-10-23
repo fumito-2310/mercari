@@ -55,8 +55,9 @@
 |image|string|null: false|
 |name|string|null: false|
 |explanation|text|null: false|
-<!-- 下カテゴリを別テーブルにしてもいいかも -->
-|details_category|string|null: false|
+|details_category_major|string|null: false|
+|details_category_medium|string|null: false|
+|details_category_minor|string|null: false|
 |details_size|string|null: false|
 |details_state|string|null: false|
 |delivery_fee|string|null: false|
@@ -65,22 +66,22 @@
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 ### Association
-- has_many :items_categorys
-- has_many :categorys, through: :items_categorys
+<!-- - has_many :items_categorys
+- has_many :categorys, through: :items_categorys -->
 - has_many :coments
 - belongs_to :user
 
-## items_categorysテーブル
+<!-- ## items_categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
-- belongs_to :category
+- belongs_to :category -->
 
 
-## categoryテーブル
+<!-- ## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
 |major_item|string||
@@ -88,7 +89,7 @@
 |minor_items|string||
 ### Association
 - has_many :items_categorys
-- has_many :items, through: :items_categorys
+- has_many :items, through: :items_categorys -->
 
 ## items_brandsテーブル
 |Column|Type|Options|

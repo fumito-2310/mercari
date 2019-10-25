@@ -1,35 +1,77 @@
+
 .container
-  .container__side
-    = render "side-list"
-  .main
-    .main--icon
-      =link_to "#",class: "main--icon__icon"do
-        %figure.main--icon__icon__figure
-          =image_tag("member_photo_noimage.png",width: "60",height: "60", alt: "サンプル画像")
-        %li.main--inform__tab1
-          =link_to "#",class:"main--inform__tab1__a" do
-            お知らせ
-        %li.main--inform__tab1
-          =link_to "#",class:"main--inform__tab1__a" do
-            やることリスト
-    .main--contents
-      %ul
-        %li.main--contents__tab2
-          =link_to "#",class:"main--inform__tab2__a" do
-            お知らせ
-        %li.main--contents__tab2
-          =link_to "#",class:"main--inform__tab2__a" do
-            お知らせ
-        %li.main--contents__tab2__gray
-          =link_to "#",class:"main--inform__tab2__gray" do
-            一覧をみる     
-    .main--history
-      %h2.top 購入した商品
-      %ul
-        %li.main--history__tab3
-          %h3 取引中
-        %li.main--history__tab3
-          %h3 過去の取引
+  .container--wrapper
+    .container--side
+      = render "side-list"
+    .main
+      .main--icon
+        =image_tag "user-bg.jpg",class: "main-icon__back1"
+        =link_to "#",class: "main--icon__icon" do
+          %figure.main--icon__figure
+            =image_tag("member_photo_noimage.png",width: "60",height: "60", alt: "サンプル画像",class:"main--icon__back2")
+            %h2.main--icon__figure__user ユーザー
+            %div
+              %div.main--icon__figure__user__rate
+                評価 0
+              %div.main--icon__figure__user__rate
+                出品数 0
+      .main--inform 
+        %ul.main--inform__tab0
+          %li.main--inform__tab1
+            =link_to "#",class:"main--inform__tab1__a" do
+              お知らせ
+          %li.main--inform__tab1
+            =link_to "#",class:"main--inform__tab1__a" do
+              やることリスト
+        .main--contents
+          %div
+            %ul.main--contents
+              %li.main--contents--tab3
+                =link_to "#",class:"main--contents--tab3--link" do
+                  %figure.main--contents--tab3--link__figure
+                    =image_tag("mercari_profile.png",width:"48",height:"48", alt:"メルカリ",class:"main--contents__icon")
+                  %div.main--contents--tab3--link__text
+                    %div
+                      《ご登録記念》¥1,000の商品を実質「実質１円」で購入いただけます！
+                    %time
+                      %i.icon-time
+                        7時間前
+                  %i.fa.fa-chevron-right
+              %li.main--contents--tab3
+                =link_to "#",class:"main--contents--tab3--link" do
+                  %figure.main--contents--tab3--link__figure
+                    =image_tag("mercari_profile.png",width:"48",height:"48", alt:"メルカリ",class:"main--contents__icon")
+                  %div.main--contents--tab3--link__text
+                    %div
+                      《ご登録記念》¥1,000の商品を実質「実質１円」で購入いただけます！
+                    %time
+                      %i.icon-time
+                        7時間前
+                  %i.fa.fa-chevron-right
+              %li.main--contents--tab3
+                =link_to "#",class:"main--contents--tab3--link" do
+                  %figure.main--contents--tab3--link__figure
+                    =image_tag("mercari_profile.png",width:"48",height:"48", alt:"メルカリ",class:"main--contents__icon")
+                  %div.main--contents--tab3--link__text
+                    %div
+                      《ご登録記念》¥1,000の商品を実質「実質１円」で購入いただけます！
+                    %time
+                      %i.icon-time
+                        7時間前
+                  %i.fa.fa-chevron-right
+              %li.main--contents--tab3
+                =link_to "#",class:"main--contents--tab3__gray"do
+                  一覧をみる
+              
+      .main--history
+        %h2.main--history__top 購入した商品
+        %ul
+          %li.main--history__tab3
+            %h3 取引中
+          %li.main--history__tab3
+            %h3 過去の取引
+        %div.main--history__bottom
+          =image_tag("logo-gray-icon.png")
     
 
 

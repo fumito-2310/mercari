@@ -58,3 +58,5 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'pry-rails'
 gem 'haml-rails'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'dotenv-rails'

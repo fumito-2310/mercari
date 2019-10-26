@@ -9,18 +9,23 @@ class User < ApplicationRecord
          # step1入力項目
          validates :nickname,                presence: true, length: {maximum: 20}
          validates :email,                   presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-         validates :password,                presence: true, length: {minimum: 6, maximum: 128},on: :save_to_session_before_phone
-         validates :password_confirmation,   presence: true, length: {minimum: 6, maximum: 128},on: :save_to_session_before_phone
-       
+         validates :password,                presence: true, length: {minimum: 6, maximum: 128}
+         validates :password_confirmation,   presence: true, length: {minimum: 6, maximum: 128}
+         validates :last_name,               presence: true
+         validates :first_name,              presence: true
+         validates :last_name_kana,          presence: true
+         validates :first_name_kana,         presence: true
+
+         validates :birthdate_year,          presence: true
+         validates :birthdate_month,         presence: true
+         validates :birthdate_day,           presence: true
+
 
          validates :phone_number,            presence: true
 
 
          # step3入力項目
-         validates :last_name,               presence: true
-         validates :first_name,              presence: true
-         validates :last_name_kana,          presence: true
-         validates :first_name_kana,         presence: true
+      
          validates :address_number,          presence: true
          validates :address_prefecture,      presence: true
          validates :address_name,            presence: true

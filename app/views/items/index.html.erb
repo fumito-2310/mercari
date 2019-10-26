@@ -41,86 +41,17 @@
 
     <div class="sc-itybZL bIgBgj">
 
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
+      <% @items.each do |item| %>
 
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
+        <div class="sc-eMigcr ZgKP">
+          <div class="sc-fzsDOv eAHBGs"><%= item.image %></div>
+          <div class="sc-gPWkxV dVvLBy"><%= item.price %></div>
+          <div class="sc-jVODtj hMphjp">
+            <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx"><%= item.name %></div>
+          </div>
         </div>
-      </div>
 
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
-      <div class="sc-eMigcr ZgKP">
-        <div class="sc-fzsDOv eAHBGs">image</div>
-        <div class="sc-gPWkxV dVvLBy">price</div>
-        <div class="sc-jVODtj hMphjp">
-          <div class="style_placeholder__QmojK style_lightgray__2NUtB style_line__1vcbc style_xlarge__dBb6P sc-kUaPvJ jVrRpx">text</div>
-        </div>
-      </div>
-
+      <% end %>
 
     </div>
 

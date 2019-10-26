@@ -1,0 +1,34 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_for @item do |form| %>
+      <h3>
+        投稿する
+      </h3>
+      出品画像
+      <%= form.file_field :image, placeholder: "Image" %></br>
+      商品名
+      <%= form.text_field :name, placeholder: "Name" %></br>
+      商品の説明
+      <%= form.text_field :explanation, placeholder: "explanation" %></br>
+      カテゴリー大分類
+      <%= form.text_field :details_category_major, placeholder: "details_category_major" %></br>
+      カテゴリー中分類
+      <%= form.text_field :details_category_medium, placeholder: "details_category_medium" %></br>
+      カテゴリー小分類
+      <%= form.text_field :details_category_minor, placeholder: "details_category_minor" %></br>
+      サイズ
+      <%= form.text_field :details_size, placeholder: "details_size" %></br>
+      商品の状態
+      <%= form.text_field :details_state, placeholder: "details_state" %></br>
+      配送料の負担
+      <%= form.text_field :delivery_fee, placeholder: "delivery_fee" %></br>
+      発送元の地域
+      <%= form.text_field :delivery_area, placeholder: "delivery_area" %></br>
+      発送までの日数
+      <%= form.text_field :delivery_days, placeholder: "delivery_days" %></br>
+      価格
+      <%= form.text_field :price, placeholder: "Price" %></br>
+      <%= form.submit "出品する" %>
+    <% end %>
+  </div>
+</div>

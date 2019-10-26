@@ -1,0 +1,31 @@
+%body
+  .top__page
+    .top__page__header
+      .top__page__header__top
+        .top__page__header__top__logo
+          %a.merukari__logo{:href => "/"}
+            = image_tag 'merukari_logo.svg',class: 'img.example1'
+
+            -# %img.example1{:alt => "メルカリロゴ", :src => "merukari_logo.svg", :title => "メルカリロゴ"}/
+        .top__page__header__top__form
+          %form{:action => "/", :method => "post"}
+            %input.box{:name => "search", :placeholder => "何かお探しですか？", :type => "text"}/
+      .top__page__header__under
+        .top__page__header__under__category
+          　
+          %i.fas.fa-list カテゴリーから探す
+        .top__page__header__under__brand
+          %i.fas.fa-tag ブランドから探す
+        .top__page__header__under__evaluation
+          %i.far.fa-heart いいね一覧
+          　　
+        　　　
+        .top__page__header__under__notice
+          %i.fas.fa-bell お知らせ
+        .top__page__header__under__todo
+          %i.fas.fa-check やることリスト
+        　
+        .top__page__header__under__mypage
+          %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
+          %i.fas.fa-user マイページ
+          　

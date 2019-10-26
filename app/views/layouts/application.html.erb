@@ -22,7 +22,7 @@
 
   </head>
 
-  <body>
+  <%# <body>
    <div class="top__page">
         <div class="top__page__header">
 
@@ -31,8 +31,8 @@
                   <a class="merukari__logo" href="/">
                   <img src="merukari_logo.svg" alt="メルカリロゴ" title="メルカリロゴ" class="example1">
                   </a>
-                </div>
-                <div class="top__page__header__top__form">
+                </div> %>
+                <%# <div class="top__page__header__top__form">
                     <form action="/" method="post">
                       <input type="text" name="search" placeholder="何かお探しですか？" class="box">
                     </form>
@@ -56,10 +56,10 @@
             </div>
             <div class="top__page__header__under__todo">
                 <i class="fas fa-check">やることリスト</i>
-            </div>           
-          　 <div class="top__page__header__under__mypage">
-              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-
+            </div>            %>
+          <%# 　 <div class="top__page__header__under__mypage">
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i> %>
+<%# 
               <i class="fas fa-user">マイページ</i>
           　 </div>
 
@@ -67,8 +67,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> %>
 
+ <%= render 'layouts/header' %>
 
 
 </body>

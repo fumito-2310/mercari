@@ -64,7 +64,8 @@
 |delivery_area|string|null: false|
 |delivery_days|string|null: false|
 |price|integer|null: false|
-|user_id|references|null: false, foreign_key: true|
+|seller_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false, foreign_key: true|
 ### Association
 <!-- - has_many :items_categorys
 - has_many :categorys, through: :items_categorys -->

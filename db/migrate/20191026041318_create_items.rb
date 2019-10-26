@@ -4,7 +4,10 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :image, null: false
       t.string :name, null: false
       t.text :explanation, null: false
-      t.string :details_category, null: false
+      t.string :details_category_major, null: false
+      t.string :details_category_medium, null: false
+      t.string :details_category_minor, null: false
+      t.string :details_size, null: false
       t.string :details_state, null: false
       t.string :delivery_fee, null: false
       t.string :delivery_area, null: false

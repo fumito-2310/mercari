@@ -3,28 +3,29 @@
 %div
   %a.funcBtn{:href => "/items/new"}
     %span 出 品
-.categories
-  %h2.categories__title 人気のカテゴリー
-  .categories__body
-    %ul.categories__body__list
-      %li.categories__body__list__item
-        %a.categories__body__list__btn レディース
-      %li.categories__body__list__item
-        %a.categories__body__list__btn メンズ
-      %li.categories__body__list__item
-        %a.categories__body__list__btn 家電・スマホ・カメラ
-      %li.categories__body__list__item
-        %a.categories__body__list__btn おもちゃ・ホビー・グッズ
-.sc-eInJlc.dJoKrd
-  .sc-gtfDJT.hpvUdP
-    .sc-hgHYgh.cSmJwt.sc-hzNEM.kJHZlB{:name => "scroll-1"}
-      %h3.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv2__3K0hn.sc-chbbiW.kHlukY レディース新着アイテム
-      %a.sc-kxynE.eOANOQ{:href => "/jp/category/1/"} もっと見る
-    .sc-itybZL.bIgBgj
-      - @items.each do |item|
-        .sc-eMigcr.ZgKP
-          = image_tag item.image, class: "sc-fzsDOv eAHBGs"
-          .sc-gPWkxV.dVvLBy= item.price
-          .sc-jVODtj.hMphjp
-            .style_placeholder__QmojK.style_lightgray__2NUtB.style_line__1vcbc.style_xlarge__dBb6P.sc-kUaPvJ.jVrRpx= item.name
+.main-container
+  .categories
+    %h2.categories__title 人気のカテゴリー
+    .categories__body
+      %ul.categories__body__list
+        %li.categories__body__list__item
+          %a.categories__body__list__btn レディース
+        %li.categories__body__list__item
+          %a.categories__body__list__btn メンズ
+        %li.categories__body__list__item
+          %a.categories__body__list__btn 家電・スマホ・カメラ
+        %li.categories__body__list__item
+          %a.categories__body__list__btn おもちゃ・ホビー・グッズ
+  .sc-eInJlc.dJoKrd
+    .sc-gtfDJT.hpvUdP
+      .sc-hgHYgh.cSmJwt.sc-hzNEM.kJHZlB{:name => "scroll-1"}
+        %h3.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv2__3K0hn.sc-chbbiW.kHlukY レディース新着アイテム
+        %a.sc-kxynE.eOANOQ{:href => "/jp/category/1/"} もっと見る
+      .sc-itybZL.bIgBgj
+        - @items.each do |item|
+          .sc-eMigcr.ZgKP
+            = image_tag item.image, class: "sc-fzsDOv eAHBGs"
+            .sc-gPWkxV.dVvLBy= item.price
+            .sc-jVODtj.hMphjp
+              .style_placeholder__QmojK.style_lightgray__2NUtB.style_line__1vcbc.style_xlarge__dBb6P.sc-kUaPvJ.jVrRpx= item.name
 = render 'layouts/footer'

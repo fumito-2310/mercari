@@ -175,15 +175,19 @@
 .jVrRpx{height:10px;margin:0 10px 10px 10px;max-width:calc(100% - 20px);} .jVrRpx + .sc-kUaPvJ{margin-top:0;}.iEJIwU{height:10px;margin:0 10px 10px 10px;max-width:calc(75% - 20px);} .iEJIwU + .sc-kUaPvJ{margin-top:0;}
 
 .funcBtn{
-  width: 250px;
-  height: 250px;
+  text-align: center;
+  line-height: 160px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
   z-index: 100;
-  position: fixed; right: -10px; bottom: -10px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
   display: block;
-  transition:
-  right 0.2s ease-out 0s,
-  bottom 0.2s ease-out 0s,
-  opacity 0.2s ease-out 0s,
-  transform 0.2s ease-out 0s;
   background-color: red;
+  text-decoration: none;
   }

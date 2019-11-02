@@ -68,4 +68,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'haml-rails'
-gem 'devise'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'dotenv-rails'

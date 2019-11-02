@@ -20,7 +20,7 @@ def step0_2
   session[:uid] = user_params[:uid]
   session[:provider] = user_params[:provider]
   @user = User.new
-  binding.pry
+  
 end
 
 
@@ -47,7 +47,7 @@ end
     session[:birthdate_day] = user_params[:birthdate_day]
 
     @user = User.new # 新規インスタンス作成
-    binding.pry
+    
 
   end
 
@@ -55,7 +55,7 @@ end
     # step2で入力された値をsessionに保存
     session[:phone_number] = user_params[:phone_number]
     @user = User.new # 新規インスタンス作成
-    binding.pry
+    
 
   end
 
@@ -68,7 +68,7 @@ end
     session[:address_building] = user_params[:address_building]
     session[:address_phone_number] = user_params[:address_phone_number]
     @user = User.new # 新規インスタンス作成
-    binding.pry
+    
 
   end
 
@@ -113,7 +113,7 @@ end
       provider: session[:provider],
       uid: session[:uid]
     )
-    binding.pry
+    
 
     # @sns = SnsCredential.create(
     #   uid: session[:uid],
@@ -135,7 +135,7 @@ end
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      binding.pry
+      
       # render action: "step1.html.haml"
     end
   end

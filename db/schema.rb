@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20191102074827) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image",                                 default: ""
+    t.string   "image",                                 default: "", null: false
     t.string   "name",                                               null: false
     t.text     "explanation",             limit: 65535,              null: false
     t.string   "details_category_major",                default: "", null: false
-    t.string   "details_category_medium",               default: ""
-    t.string   "details_category_minor",                default: ""
+    t.string   "details_category_medium",               default: "", null: false
+    t.string   "details_category_minor",                default: "", null: false
     t.string   "details_size",                          default: "", null: false
     t.string   "details_state",                         default: "", null: false
     t.string   "delivery_fee",                          default: "", null: false

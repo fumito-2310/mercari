@@ -1,10 +1,3 @@
--# = form_for @user, url: signup_index_path, method: :post, action: "create", html: {class: 'forth-main-wrapper__box'} do |f|
--#   = f.text_field :card_number, required:"required"
--#   = f.text_field :expiry_date_month, required:"required"
--#   = f.text_field :expiry_date_year, required:"required"
--#   = f.text_field :security_code, required:"required"
--#   = f.submit '次へ進む', class: 'register-profile__nextpage'
-
 %body
   %header.registCard-header
     .registCard-header__container
@@ -41,7 +34,7 @@
           %p 有効期限
           %p.registCard-container__form__required 必須
           .registCard-container__form--deadline
-            %select.registCard-container__form__month{:name => "month"}>
+            %select{:name => "month"}>
               %option{:value => ""} -
               %option{:value => "1"} 01
               %option{:value => "2"} 02

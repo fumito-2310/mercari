@@ -79,6 +79,10 @@ ActiveRecord::Schema.define(version: 20191102074827) do
     t.datetime "updated_at",                                         null: false
     t.string   "provider"
     t.string   "uid"
+    t.integer  "card_number"
+    t.integer  "expiry_date_month"
+    t.integer  "expiry_date_year"
+    t.integer  "security_code"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

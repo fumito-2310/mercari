@@ -1,0 +1,36 @@
+%body
+  %header.signup-header
+    %a.signup-header__link{:href => ""}
+      = image_tag 'logo.svg', class: 'signup-header__img'
+  %main.signup-main
+    .signup-container
+      .signup-container__header
+        %p 新規会員登録
+      .signup-container__buttons
+        .buttons__email
+          %a.buttons__email--link{:href => ""}
+            %i.far.fa-envelope.fa-lg
+            %p メールアドレスで登録する
+        .buttons__facebook
+          %a.buttons__facebook--facebook{:href => ""}
+            %i.fab.fa-facebook-square.fa-2x
+            %p Facebookで登録する
+        / facebookログインで使うかも
+        /
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
+          <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        .buttons__google
+          = image_tag 'g-logo.png', class:'buttons__google--logo'
+          %a.buttons__email--mail{:href => ""}
+            %p Googleで登録する
+  %footer.signup-footer
+    .signup-footer__rule
+      %a{:href => ""} プライバシーポリシー
+      %a{:href => ""} メルカリ利用規約
+      %a{:href => ""} 特定商取引に関する表記
+    .signup-footer__logo
+      %a{:href => ""}
+        = image_tag 'logo-gray.svg'
+    .signup-footer__copyRight
+      %p © 2019 TeamA

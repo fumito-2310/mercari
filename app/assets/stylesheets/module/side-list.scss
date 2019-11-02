@@ -1,0 +1,26 @@
+.side {
+    .list {
+        display: block;
+        color: black;
+        list-style: none;
+        &__item {
+            border: 1px solid gray;
+            position: relative;
+            display: block;
+            min-height: 16px;
+            padding: 16px;
+            background: #fff;
+            width: 250px;
+            font-size: 14px;
+            text-decoration: none;
+            color: black;
+            line-height: 16px;
+        }
+        &__item2 {
+            padding-top: 20px;
+        }
+        .fa-chevron-right {
+            float: right;
+        }
+    }
+}

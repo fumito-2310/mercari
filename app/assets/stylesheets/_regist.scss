@@ -171,10 +171,17 @@
   font-size: 15px;
 }
 
-.reCAPTCHA img {
-  margin-top: 30px;
+.reCAPTCHA {
   height: 74px;
   width: 300px;
+}
+
+// .g-recaptcha {
+//   height: 10vh;
+// }
+
+iFrame {
+  margin-top: 3vh;
 }
 
 .regist-container__form__rule {

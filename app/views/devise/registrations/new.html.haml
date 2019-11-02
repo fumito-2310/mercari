@@ -1,12 +1,55 @@
-%h2 Sign&#xA0;up
-=  form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
-\&#xA0;&#xA0;#{ render "devise/shared/error_messages", resource: resource }
 
-\&#xA0;&#xA0;
-%div>
-\&#xA0;class="field"&gt;
-\&#xA0;&#xA0;&#xA0;&#xA0;#{ f.label :email }
-= succeed "\u00A0/>" do
-  %br/
-=  f.email_field :email, autofocus: true, autocomplete: email 
-\&#xA0;&#xA0;
+-# <h1>新規会員登録</h1>
+  
+-# <li>
+-# <%= link_to 'メールアドレスで登録', "/signup/step1", method: :get %>
+-# <%# <%= link_to 'メールアドレスで登録', "/signup/step1", :controller=> 'signup', action: "step1", method: :get %>
+-# </li>
+
+-# <li>  
+-# <%= link_to 'Facebookで登録', "/users/auth/facebook", method: :post %>
+
+-# <%# <%= link_to 'Facebookで登録', "user_facebook_omniauth_authorize_path", method: :post %>
+-# </li>
+
+-# <li> 
+-# <%= link_to 'Googleで登録', "/auth/google_oauth2", method: :post %>
+-# </li>
+
+%body
+  %header.signup-header
+    %a.signup-header__link{:href => ""}
+      = image_tag 'logo.svg', class: 'signup-header__img'
+  %main.signup-main
+    .signup-container
+      .signup-container__header
+        %p 新規会員登録
+      .signup-container__buttons
+        .buttons__email
+          %a.buttons__email--link{:href => "/signup/step1"}
+            %i.far.fa-envelope.fa-lg
+            %p メールアドレスで登録する
+        .buttons__facebook
+          %a.buttons__facebook--facebook{:href => ""}
+            %i.fab.fa-facebook-square.fa-2x
+            %p Facebookで登録する
+        / facebookログインで使うかも
+        /
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
+          <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        .buttons__google
+          = image_tag 'g-logo.png', class:'buttons__google--logo'
+          %a.buttons__email--mail{:href => ""}
+            %p Googleで登録する
+  %footer.signup-footer
+    .signup-footer__rule
+      %a{:href => ""} プライバシーポリシー
+      %a{:href => ""} メルカリ利用規約
+      %a{:href => ""} 特定商取引に関する表記
+    .signup-footer__logo
+      %a{:href => ""}
+        = image_tag 'logo-gray.svg'
+    .signup-footer__copyRight
+      %p © 2019 TeamA
+

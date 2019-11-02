@@ -2,7 +2,11 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
+
+  has_many :sns_credentials, dependent: :destroy
+
 
          VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -38,6 +42,56 @@ class User < ApplicationRecord
          validates :expiry_date_month,       presence: true
          validates :expiry_date_year,        presence: true
          validates :security_code,           presence: true
+
+
+        
+
+
+
+
+
+
+
+  #  SNSログイン機能。facebookかgoogleからユーザー情報を引っ張り出してreturnする。
+  #       このときSNScredentialsテーブルにはuidとproviderを保存するが、User情報は保存しない。
+        def self.find_oauth(auth)
+          uid = auth.uid
+          provider = auth.provider
+          snscredential = SnsCredential.where(uid: uid, provider: provider).first
+          if snscredential.present? #sns登録のみ完了してるユーザー
+            user = User.where(id: snscredential.user_id).first
+            unless user.present? #ユーザーが存在しないなら
+              user = User.new(
+                nickname: auth.info.name,
+                email: auth.info.email,
+              )
+            end
+            sns = snscredential
+          else #sns登録 未
+            user = User.where(email: auth.info.email).first
+          if user.present? #会員登録 済
+            else #会員登録 未
+              user = User.new(
+                nickname: auth.info.name,
+                email: auth.info.email,
+              )
+              sns = SnsCredential.new(
+                uid: uid,
+                provider: provider,
+              )
+            end
+          end
+          return {  user: user , sns: sns } # hashでsnsのidを返り値として保持しておく
+        end
+
+
+
+
+
+
+
+
+       
 
 
 end

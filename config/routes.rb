@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" }
+  # controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
+  #   registrations: 'users/registrations' }
   
+    get '/auth/facebook/callback', to: 'facebook#auth_done'
+
+
   root to: 'top#index' 
    get 'top' => 'top#index'
 
@@ -11,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :signup do
     collection do
+      get 'step0_1'
+      get 'step0_2'
       get 'step1'
       get 'step2'
       get 'step3'

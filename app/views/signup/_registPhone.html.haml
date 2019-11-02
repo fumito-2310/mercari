@@ -1,0 +1,45 @@
+%body
+  %header.registPhone-header
+    .registPhone-header__container
+      %a.registPhone-header__link{:href => ""}
+        = image_tag 'logo.svg', class: 'regist-header__img'
+      .steplist-container
+        %ul.steplist-container__steplist
+          %li.completed
+            %span.bubble.red
+            %p 会員情報
+          %li.entering
+            %span.bubble
+            %p 電話番号認証
+          %li
+            %span.bubble
+            %p お届け先住所入力
+          %li
+            %span.bubble
+            %p 支払い方法
+          %li
+            %span.bubble
+            %p 完了
+  %main.registPhone-main
+    .registPhone-container
+      .registPhone-container__header
+        %p 電話番号の確認
+      .registPhone-container__form
+        .registPhone-container__form--text
+          %p.registPhone-container__form__item 携帯電話の番号
+          %input{:placeholder => "　携帯電話の番号を入力", :type => "text"}/
+          %p.registPhone-container__form__note 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+        .registPhone-container__form--submit
+          %input{:type => "submit", :value => "SMSを送信する"}/
+          %p.registPhone-container__form__note ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        %a.registPhone-container__form__about{:href => ""} 電話番号の確認が必要な理由＞
+  %footer.registPhone-footer
+    .registPhone-footer__rule
+      %a{:href => ""} プライバシーポリシー
+      %a{:href => ""} メルカリ利用規約
+      %a{:href => ""} 特定商取引に関する表記
+    .registPhone-footer__logo
+      %a{:href => ""}
+        = image_tag 'logo-gray.svg'
+    .registPhone-footer__copyRight
+      %p © 2019 TeamA

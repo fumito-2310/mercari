@@ -49,6 +49,7 @@ class ItemsController < ApplicationController
                                  :delivery_days,
                                  :price)
                                  .merge(seller_id: 1)
+                                 .merge(buyer_id: 1)
   end
 
 end

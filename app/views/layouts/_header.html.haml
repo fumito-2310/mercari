@@ -22,3 +22,5 @@
         .top__page__header__under__mypage
           %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
           %i.fas.fa-user マイページ
+          = link_to 'LOGOUT', destroy_user_session_path, method: :delete
+          = link_to '新規登録へ', new_user_registration_path, method: :get

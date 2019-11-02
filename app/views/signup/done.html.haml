@@ -29,7 +29,7 @@
           %p.registComplete-container__form__text--top ありがとうございます。
           %p.registComplete-container__form__text--bottom 会員登録が完了しました。
         .registComplete-container__toTop
-          %a{:href => ""} メルカリをはじめる
+          = link_to '最初へ', top_path, method: :get
   %aside.bottomAside
     .bottomAside--info
       %p.up スマホでかんたんフリマアプリ

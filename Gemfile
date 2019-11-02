@@ -68,4 +68,10 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'haml-rails'
-gem 'devise'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'dotenv-rails'
+gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'pry-rails'

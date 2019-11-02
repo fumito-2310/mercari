@@ -27,11 +27,13 @@
       .signup-container__buttons
         .buttons__email
           %a.buttons__email--link{:href => "/signup/step1"}
-            %i.far.fa-envelope.fa-lg
+            -# %i.far.fa-envelope.fa-lg
+            = fa_icon 'envelope'
             %p メールアドレスで登録する
         .buttons__facebook
           %a.buttons__facebook--facebook{:href => ""}
-            %i.fab.fa-facebook-square.fa-2x
+            -# %i.fab.fa-facebook-square.fa-2x
+            = fa_icon 'facebook-square'
             %p Facebookで登録する
         / facebookログインで使うかも
         /

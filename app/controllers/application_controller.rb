@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   end
   def post_params
     params.require(:post).permit(:userid, :file_name, :file_hash)
+  end
 
   private
 

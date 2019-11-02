@@ -29,9 +29,9 @@ Rails.application.routes.draw do
   resources :users
   resources :items
 
-  root to: 'signup#step4'  
-  devise_for :users
-  root  'users#index'
+  # root to: 'signup#step4'  
+  # devise_for :users
+  # root  'users#index'
 
   resources :signup do
     collection do

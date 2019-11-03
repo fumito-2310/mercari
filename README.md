@@ -11,17 +11,17 @@
 |birthdate_year|integer||
 |birthdate_month|integer||
 |birthdate_day|integer||
-|phone_number|integer|null: false|
+|phone_number|string|null: false|
 |address_last_name|string||
 |address_first_name|string||
 |address_last_name_kana|string||
 |address_first_name_kana|string||
 |address_number|string|null: false|
-|address_prefecture|integer|null: false, default: 0|
+|address_prefecture|string|null: false|
 |address_name|string|null: false|
 |address_block|string|null: false|
 |address_building|string||
-|address_phone_number|integer||
+|address_phone_number|string||
 |introduce|text|limit: 65535|
 |encrypted_password|string|default: ""|
 |reset_password_token|string|null: false, add_index, name: "index_users_on_reset_password_token", unique: true, using: :btree|

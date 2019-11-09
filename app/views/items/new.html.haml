@@ -1,13 +1,13 @@
 %body
   .single-container
     %header.single-header
-      %h1
-        %a{:href => "/"}
-          %img{:alt => "mercari", :src => "logo"}/
+      %a{href: "/"}
+        %h1
+          = image_tag 'logo.svg', alt: "mercari", class: 'signup-header__img'
           
     %main.single-main
       %section.sell-container
-        %h2 商品の情報を入力
+        %h2.l-single-head 商品の情報を入力
         = form_for @item do |f|
           .sell-upload-box
             %h3.sell-upload-head
@@ -56,13 +56,27 @@
                     %i.icon-arrow-bottom
                     %option{:value => "8"}
                     = f.select :details_category_major, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    %option{:value => "8"}
+                    = f.select :details_category_medium, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    %option{:value => "8"}
+                    = f.select :details_category_minor, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
               .form-group
+                %label
+                  商品のサイズ
+                  %span.form-require 必須
+                .select-wrap
+                  %i.icon-arrow-bottom
+                  = f.select :details_size, ["---", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり","傷や汚れあり", "全体的に状態が悪い"], {}, class: "select-default"
                 %label
                   商品の状態
                   %span.form-require 必須
                 .select-wrap
                   %i.icon-arrow-bottom
-                  = f.select :details_size, ["---", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり","傷や汚れあり", "全体的に状態が悪い"], {}, class: "select-default"
+                  = f.select :details_state, ["---", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり","傷や汚れあり", "全体的に状態が悪い"], {}, class: "select-default"
           .sell-content.clearfix
             %h3.sell-sub-head 配送について
             %a.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
@@ -169,7 +183,7 @@
           %li プライバシーポリシー
           %li メルカリ利用規約
           %li 特定商取引に関する表記
-      %a.single-footer-logo{:href => "/"}
-        %img{:alt => "mercari", :src => "logo"}/
+      %a.single-footer-logo{href: "/"}
+        = image_tag 'logo-gray.svg', alt: 'mercari'
       %p
         %small © 2019 Mercari

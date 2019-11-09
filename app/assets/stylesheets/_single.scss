@@ -45,6 +45,13 @@ main {
   font-weight: bold;
 }
 
+.l-single-head {
+  padding: 32px 16px;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+}
+
 .sell-content {
   padding: 40px;
   border-top: 1px solid #eee;
@@ -146,6 +153,7 @@ main {
   background: #fff;
   font-size: 16px;
   line-height: 1.5;
+  margin: 8px 0 0;
 }
 
 .sell-content.sell-btn-box {

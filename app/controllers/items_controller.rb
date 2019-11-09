@@ -6,11 +6,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path, notice: '商品を登録しました'
-    else
-      # render :new
-    end
+    @item.save
+    redirect_to root_path
+    
+    # if @item.save
+    #   redirect_to root_path, notice: '商品を登録しました'
+    # else
+    #   # render :new
+    # end
 
   end
 
@@ -46,6 +49,7 @@ class ItemsController < ApplicationController
                                  :delivery_days,
                                  :price)
                                  .merge(seller_id: 1)
+                                 .merge(buyer_id: 1)
   end
 
 end

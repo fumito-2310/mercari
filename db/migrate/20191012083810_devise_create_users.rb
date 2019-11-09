@@ -3,7 +3,7 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
-      ## Database authenticatable
+      # Database authenticatable
       t.string :nickname, null: false
       t.string :email, null: false, unique: true
       t.string :last_name, null: false
@@ -19,7 +19,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :address_last_name_kana, null: false
       t.string :address_first_name_kana, null: false
       t.string :address_number, null: false
-      t.integer :address_prefecture, null: false, default: 0
+      t.integer :address_prefecture, null: false, default: "0"
       t.string :address_name, null: false
       t.string :address_block, null: false
       t.string :address_building
@@ -27,7 +27,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.text :introduce
       t.string :encrypted_password, null: false, default: ""
 
-      ## Recoverable
+  #     ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 

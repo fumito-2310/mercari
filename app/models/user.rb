@@ -34,8 +34,8 @@ class User < ApplicationRecord
          validates :address_prefecture,      presence: true
          validates :address_name,            presence: true
          validates :address_block,           presence: true
-         validates :address_building,        presence: true
-         validates :address_phone_number,    presence: true
+        #  validates :address_building,        presence: true
+        #  validates :address_phone_number,    presence: true
 
 
          validates :card_number,             presence: true

@@ -23,22 +23,22 @@ ActiveRecord::Schema.define(version: 20191103043304) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image",                                 default: "", null: false
-    t.string   "name",                                               null: false
-    t.text     "explanation",             limit: 65535,              null: false
-    t.string   "details_category_major",                default: "", null: false
-    t.string   "details_category_medium",               default: "", null: false
-    t.string   "details_category_minor",                default: "", null: false
-    t.string   "details_size",                          default: "", null: false
-    t.string   "details_state",                         default: "", null: false
-    t.string   "delivery_fee",                          default: "", null: false
-    t.string   "delivery_area",                         default: "", null: false
-    t.string   "delivery_days",                         default: "", null: false
-    t.integer  "price",                                              null: false
-    t.integer  "seller_id"
-    t.integer  "buyer_id"
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.string   "image",                                 null: false
+    t.string   "name",                                  null: false
+    t.text     "explanation",             limit: 65535, null: false
+    t.string   "details_category_major",                null: false
+    t.string   "details_category_medium",               null: false
+    t.string   "details_category_minor",                null: false
+    t.string   "details_size",                          null: false
+    t.string   "details_state",                         null: false
+    t.string   "delivery_fee",                          null: false
+    t.string   "delivery_area",                         null: false
+    t.string   "delivery_days",                         null: false
+    t.integer  "price",                                 null: false
+    t.integer  "seller_id",                             null: false
+    t.integer  "buyer_id",                              null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -77,13 +77,12 @@ ActiveRecord::Schema.define(version: 20191103043304) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
-
+    t.string   "provider"
+    t.string   "uid"
     t.integer  "card_number"
     t.integer  "expiry_date_month"
     t.integer  "expiry_date_year"
     t.integer  "security_code"
-    t.string   "provider"
-    t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

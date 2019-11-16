@@ -76,3 +76,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'pry-rails'
 gem "font-awesome-rails"
+gem 'ancestry'
+gem "dropzonejs-rails"
+gem 'gon'

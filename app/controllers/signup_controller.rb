@@ -45,10 +45,7 @@ end
     session[:birthdate_year] = user_params[:birthdate_year]
     session[:birthdate_month] = user_params[:birthdate_month]
     session[:birthdate_day] = user_params[:birthdate_day]
-
     @user = User.new # 新規インスタンス作成
-    
-
   end
 
   def step3
@@ -136,7 +133,7 @@ end
       redirect_to done_signup_index_path
     else
       
-      # render action: "step1.html.haml"
+      render action: "step1.html.haml"
     end
   end
 

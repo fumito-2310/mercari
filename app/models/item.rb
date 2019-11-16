@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
   belongs_to :seller, optional: true, class_name: "User"
   belongs_to :buyer, optional: true, class_name: "User"
-  belongs_to :user
+  # belongs_to :user
   has_many :comments
 
-  belongs_to :category
+  # belongs_to :details_category_major
 
   has_many :images, dependent: :destroy
 

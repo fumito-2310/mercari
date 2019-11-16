@@ -131,7 +131,6 @@ main {
 }
 
 .input-default {
-  width: 100%;
   margin: 8px 0 0;
   height: 48px;
   padding: 10px 16px 8px;
@@ -142,6 +141,14 @@ main {
   font-size: 16px;
 }
 
+.sell-price-input .input-default {
+  margin: 0;
+  text-align: right;
+}
+
+.form-group .input-default {
+  width: 100%;
+}
 
 .textarea-default {
   display: block;
@@ -322,4 +329,30 @@ h3 {
 
 pre {
   overflow: auto;
+}
+
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+}
+
+.l-right_2 {
+  float: right;
+}
+
+
+.sell-price .form-group .l-left {
+  width: 50%;
+  line-height: 48px;
+}
+
+.sell-price .form-group .l-right {
+  width: 50%;
+}
+
+.sell-price .form-group .l-right_2 {
+  width: 50%;
 }

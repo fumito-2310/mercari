@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :sns_credentials, dependent: :destroy
+  # ユーザは複数のコメントが可能　澤木
+  has_many :comments
 
 
          VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

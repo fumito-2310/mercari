@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :users
-  resources :items
+  resources :items do
+    resources :comments, only: [:create]
+  end
 
   # root to: 'signup#step4'  
   # devise_for :users

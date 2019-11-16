@@ -38,7 +38,7 @@
 - has_many :items
 
 
-## comentテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |comennt|text||

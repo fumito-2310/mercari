@@ -68,10 +68,21 @@
           .itemDetails-container__main__bottom--effort
             %a{:href => ""} あんしん・あんぜんへの取り組み
     .itemDetails-comment-container
+      - if @comments
+        - @comments.each do |comment|
+          .itemDetails-comment-container__comments
+            -# %img{:alt => "", :src => "img/user-icon.svg"}/
+            = image_tag 'user-icon.svg'
+            .chatting
+              .says
+                %p
+                  = comment.text
       .itemDetails-comment-container__rule
         %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       .itemDetails-comment-container__textarea
-        %textarea
-      .itemDetails-comment-container__btn
-        %a{:href => ""} コメントする
+        = form_tag("/items/#{@item.id}/comments", method: :post) do
+          %textarea
+          .itemDetails-comment-container__btn
+            %input{:type => "submit", :value => "コメントする"}/
+            -# %a{:href => ""} コメントする
 = render 'layouts/footer'

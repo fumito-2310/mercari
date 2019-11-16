@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
     @item.save
     redirect_to root_path
 
-    binding.pry
     
     # if @item.save
     #   redirect_to root_path, notice: '商品を登録しました'

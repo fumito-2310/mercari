@@ -32,18 +32,13 @@ ActiveRecord::Schema.define(version: 20191116052542) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "ancestry"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

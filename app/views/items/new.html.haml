@@ -10,35 +10,36 @@
         %h2.l-single-head 商品の情報を入力
         = form_for @item do |f|
           .sell-upload-box
+            = f.file_field :image, class: "sell-upload-drop-file"
             %h3.sell-upload-head
               出品画像
               %span.form-require 必須
             %p 最大10枚までアップロードできます
             
-            = f.fields_for :images, @item.images.first do |image|
-              .item__img__dropzone.clearfix
-                #preview
-                  .item__img__dropzone__input
-                    = image.label :image, for: "upload-image" do
-                      .input-area
-                        -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
-                      .item__img__dropzone__input__description
-                        .item__img__dropzone__input__description__text
-                          ドラッグアンドドロップ
-                          %br
-                          またはクリックしてファイルをアップロード
+            -# = f.fields_for :pictures, @item.images.first do |image|
+            -#   .item__img__dropzone.clearfix
+            -#     #preview
+            -#       .item__img__dropzone__input
+            -#         = image.label :picture, for: "upload-image" do
+            -#           .input-area
+            -#             -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
+            -#           .item__img__dropzone__input__description
+            -#             .item__img__dropzone__input__description__text
+            -#               ドラッグアンドドロップ
+            -#               %br
+            -#               またはクリックしてファイルをアップロード
 
-              .item__img__dropzone2.clearfix
-                #preview2
-                  .item__img__dropzone2__input2
-                    = image.label :image, for: "upload-image" do
-                      .input-area
-                        -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
-                      .item__img__dropzone2__input2__description
-                        .item__img__dropzone2__input2__description__text
-                          ドラッグアンドドロップ
-                          %br
-                          またはクリックしてファイルをアップロード
+            -#   .item__img__dropzone2.clearfix
+            -#     #preview2
+            -#       .item__img__dropzone2__input2
+            -#         = image.label :picture, for: "upload-image" do
+            -#           .input-area
+            -#             -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
+            -#           .item__img__dropzone2__input2__description
+            -#             .item__img__dropzone2__input2__description__text
+            -#               ドラッグアンドドロップ
+            -#               %br
+            -#               またはクリックしてファイルをアップロード
 
             / react-empty: 18
             / react-empty: 19
@@ -71,7 +72,8 @@
                 %span.form-require 必須
                 .category-select-wrap
                   .select-wrap__box#parent_wrapper
-                    = f.collection_select :category, @category_parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent_category", name: 'item[category_ids][]'
+                    -# = f.collection_select :category, @category_parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent_category", name: 'item[category_ids][]'
+                    = f.collection_select :details_category_major, @category_parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent_category"
                     %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
                 -# .select-wrap
                 -#   %i.icon-arrow-bottom

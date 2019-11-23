@@ -10,7 +10,7 @@
         %h2.l-single-head 商品の情報を入力
         = form_for @item do |f|
           .sell-upload-box
-            = f.file_field :image, class: "sell-upload-drop-file"
+            = f.file_field :images, multiple: true, class: "sell-upload-drop-file"
             %h3.sell-upload-head
               出品画像
               %span.form-require 必須

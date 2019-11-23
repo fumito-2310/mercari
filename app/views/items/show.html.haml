@@ -81,8 +81,7 @@
         %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       .itemDetails-comment-container__textarea
         = form_tag("/items/#{@item.id}/comments", method: :post) do
-          %textarea
+          = text_area_tag :text
           .itemDetails-comment-container__btn
-            %input{:type => "submit", :value => "コメントする"}/
-            -# %a{:href => ""} コメントする
+            = submit_tag "コメントする"
 = render 'layouts/footer'

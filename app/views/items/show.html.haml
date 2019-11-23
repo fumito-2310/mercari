@@ -74,6 +74,7 @@
             -# %img{:alt => "", :src => "img/user-icon.svg"}/
             = image_tag 'user-icon.svg'
             .chatting
+              = comment.user.nickname
               .says
                 %p
                   = comment.text

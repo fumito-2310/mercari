@@ -77,6 +77,9 @@
               .says
                 %p
                   = comment.text
+                %p.time-ago
+                  = time_ago_in_words(comment.created_at)
+                  前
       .itemDetails-comment-container__rule
         %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       .itemDetails-comment-container__textarea

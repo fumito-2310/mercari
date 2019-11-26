@@ -20,7 +20,11 @@
         .top__page__header__under__todo
           %i.fas.fa-check やることリスト
         .top__page__header__under__mypage
-          %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
-          %i.fas.fa-user マイページ
-          = link_to 'LOGOUT', destroy_user_session_path, method: :delete
-          = link_to '新規登録へ', new_user_registration_path, method: :get
+          -# %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
+          -# %i.fas.fa-user マイページ
+          - if user_signed_in?
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            = link_to 'マイページ', destroy_user_session_path, method: :delete
+          - else
+            = link_to 'ログイン', new_user_session_path, method: :get
+            = link_to '新規登録', new_user_registration_path, method: :get

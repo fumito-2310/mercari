@@ -1,3 +1,4 @@
+= render 'layouts/header'
 
 .container
   .container--wrapper
@@ -9,7 +10,8 @@
         =link_to "#",class: "main--icon__icon" do
           %figure.main--icon__figure
             =image_tag("member_photo_noimage.png",width: "60",height: "60", alt: "サンプル画像",class:"main--icon__back2")
-            %h2.main--icon__figure__user ユーザー
+            %h2.main--icon__figure__user
+              = current_user.nickname
             %div
               %div.main--icon__figure__user__rate
                 評価 0
@@ -73,6 +75,6 @@
         %div.main--history__bottom
           =image_tag("logo-gray-icon.png")
     
-
+= render 'layouts/footer'
 
       

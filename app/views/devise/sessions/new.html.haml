@@ -1,17 +1,61 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%body
+  %header.signup-header
+    %a.signup-header__link{:href => ""}
+      = image_tag 'logo.svg', class: 'signup-header__img'
+  %main.signup-main
+    .signup-container
+      アカウントをお持ちでない方はこちら
+      .signup-container__header
+        %p 新規会員登録
+      .signup-container__buttons
+        -# .buttons__email
+        -#   %a.buttons__email--link{:href => "/signup/step1"}
+        -#     -# %i.far.fa-envelope.fa-lg
+        -#     = fa_icon 'envelope'
+        -#     %p メールアドレスで登録する
+        .buttons__facebook
+          %a.buttons__facebook--facebook{:href => ""}
+            -# %i.fab.fa-facebook-square.fa-2x
+            = fa_icon 'facebook-square'
+            %p Facebookでログイン
+        / facebookログインで使うかも
+        /
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
+          <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        .buttons__google
+          = image_tag 'g-logo.png', class:'buttons__google--logo'
+          %a.buttons__email--mail{:href => ""}
+            %p Googleでログイン
+
+        .login-form
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field__mail
+              -# = f.label :email
+              -# %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: 'メールアドレス', class:"field__mail__box"
+            .field__password
+              -# = f.label :password
+              -# %br/
+              = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード', class:"field__password__box"
+            -# - if devise_mapping.rememberable?
+            -#   .field
+            -#     = f.check_box :remember_me
+            -#     = f.label :remember_me
+            .actions__button
+              = f.submit "ログイン", class:"actions__button__font"
+  %footer.signup-footer
+    .signup-footer__rule
+      %a{:href => ""} プライバシーポリシー
+      %a{:href => ""} メルカリ利用規約
+      %a{:href => ""} 特定商取引に関する表記
+    .signup-footer__logo
+      %a{:href => ""}
+        = image_tag 'logo-gray.svg'
+    .signup-footer__copyRight
+      %p © 2019 TeamA
+
+
+
+
+-# = render "devise/shared/links"

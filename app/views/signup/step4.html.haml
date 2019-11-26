@@ -32,18 +32,18 @@
       .registCard-container__header
         %p 支払い方法
       .registCard-container__form
-        = form_for @user, url: signup_index_path, method: :post, action: "create", html: {class: 'forth-main-wrapper__box'} do |f|
-          .registCard-container__form--text
+        = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do         
+         .registCard-container__form--text
             %p カード番号
             %p.registCard-container__form__required 必須
             -# %input{:placeholder => "　半角数字のみ", :type => "number"}/
-            = f.text_field :card_number, required:"required"
+            = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
           = image_tag 'card.png', class: 'registCard-container__form__cardList'
           .registCard-container__form--text
             %p 有効期限
             %p.registCard-container__form__required 必須
             .registCard-container__form--deadline
-              = f.select :expiry_date_month, [["01", 1,],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], class: "month registCard-container__form__month", required:"required"
+              = select :exp_month, [["01", 1,],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], class: "month registCard-container__form__month", name: "exp_month", type: "text", required:"required"
               月
               -# %select.registCard-container__form__month{:name => "month"}>
               -#   %option{:value => ""} -
@@ -60,7 +60,7 @@
               -#   %option{:value => "11"} 11
               -#   %option{:value => "12"} 12
               -# 月
-              = f.select :expiry_date_year, [["19", 2019,],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]], class: "year", required:"required"
+              = select :exp_year, [["19", 2019,],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]], class: "year", name: "exp_year", type: "text", required:"required"
               年
               -# = succeed "\u{3000}\u{5e74}" do
               -#   %select{:name => "year"}
@@ -100,11 +100,11 @@
             .registCard-container__form--text
               %p セキュリティコード
               %p.registCard-container__form__required 必須
-              = f.text_field :security_code, placeholder: '　カード背面4桁もしくは3桁の番号', required:"required"
+              = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
               -# %input{:placeholder => "　カード背面4桁もしくは3桁の番号", :type => "number"}/
             %a.registCard-container__form__about{:href => ""} カード背面の番号とは？
             .registAdress-container__form--submit
-              = f.submit '次へ進む', class: 'register-profile__nextpage'
+              = submit_tag '次へ進む', class: 'register-profile__nextpage', id: "token_submit"
               -# %input{:type => "submit", :value => "次へ進む"}/
       %footer.registCard-footer
         .registCard-footer__rule

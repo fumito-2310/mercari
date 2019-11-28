@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 
    get 'top' => 'top#index'
+  #  get "/users/#{@user.id}/showExhibit"
 
 
    def after_sign_out_path_for(resource)

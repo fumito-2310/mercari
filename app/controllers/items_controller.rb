@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
+    @user = User.find(@item.seller_id)
   end
 
   def update

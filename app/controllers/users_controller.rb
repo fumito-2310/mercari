@@ -9,6 +9,9 @@ class UsersController < ApplicationController
    else
  end
 
+ def logout
+ end
+
  private
 
  def user_params

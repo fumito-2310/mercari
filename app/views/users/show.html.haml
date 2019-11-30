@@ -74,7 +74,46 @@
             %h3 過去の取引
         %div.main--history__bottom
           =image_tag("logo-gray-icon.png")
-    
+
+    .product-list
+      .product-list__contents
+        %div
+          %ul.product-list__contents
+          - @items.each do |item|
+            %li.product-list__contents--tab3
+              =link_to "#",class:"product-list__contents--tab3--link" do
+                %figure.product-list__contents--tab3--link__figure
+                  = image_tag( item.image, width:"48",height:"48", alt:"メルカリ",class:"main--contents__icon")
+                %div.product-list__contents--tab3--link__text
+                  %div
+                    = item.name
+                  %time
+                    %i.icon-time
+                      = time_ago_in_words(item.created_at)
+                      前
+                %i.fa.fa-chevron-right
+            -# %li.product-list__contents--tab3
+            -#   =link_to "#",class:"product-list__contents--tab3--link" do
+            -#     %figure.product-list__contents--tab3--link__figure
+            -#       =image_tag("mercari_profile.png",width:"48",height:"48", alt:"メルカリ",class:"main--contents__icon")
+            -#     %div.product-list__contents--tab3--link__text
+            -#       %div
+            -#         《ご登録記念》¥1,000の商品を実質「実質１円」で購入いただけます！
+            -#       %time
+            -#         %i.icon-time
+            -#           7時間前
+            -#     %i.fa.fa-chevron-right
+            -# %li.product-list__contents--tab3
+            -#   =link_to "#",class:"product-list__contents--tab3--link" do
+            -#     %figure.product-list__contents--tab3--link__figure
+            -#       =image_tag("mercari_profile.png",width:"48",height:"48", alt:"メルカリ",class:"main--contents__icon")
+            -#     %div.product-list__contents--tab3--link__text
+            -#       %div
+            -#         《ご登録記念》¥1,000の商品を実質「実質１円」で購入いただけます！
+            -#       %time
+            -#         %i.icon-time
+            -#           7時間前
+            -#     %i.fa.fa-chevron-right
 = render 'layouts/footer'
 
       

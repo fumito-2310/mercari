@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   @nickname = current_user.nickname
  end
 
+ def identification
+  @last_name = current_user.last_name
+  @first_name = current_user.first_name
+ end
+
  def new
     @user = current_user.id
     @user.create(user_params)

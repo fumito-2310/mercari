@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
    get 'top' => 'top#index'
 
+   get 'users' => 'users#identification'
 
    def after_sign_out_path_for(resource)
     new_user_session_path

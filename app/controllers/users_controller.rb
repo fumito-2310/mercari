@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   @items = Item.where(seller_id: current_user.id)
  end
 
-  def edit
-  end
+ def edit
+ end
 
  def new
     @user = current_user.id

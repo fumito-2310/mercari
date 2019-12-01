@@ -1,0 +1,24 @@
+= render 'layouts/header'
+
+.container
+  .container--wrapper
+    .container--side
+      = render "side-list"
+
+    .main__profile
+      .main__profile__top
+        %pプロフィール
+      .main__profile__middle1
+        .main--icon
+          =image_tag "user-bg.jpg",class: "main-icon__back1"
+          =link_to "#",class: "main--icon__icon" do
+            %figure.main--icon__figure
+              =image_tag("member_photo_noimage.png",width: "60",height: "60", alt: "サンプル画像",class:"main--icon__back2")
+              %input.input__nickname{placeholder: "#{current_user.nickname}"}
+      .main__profile__middle2
+        %textarea{:placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+      .main__profile__bottom
+        = link_to "変更する",  "#", method: :delete, class: "btn-default btn-red text-default__submit"
+
+
+= render 'layouts/footer'

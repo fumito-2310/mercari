@@ -3,149 +3,149 @@
 %div
   %a.funcBtn{href: "/items/new"}
     %span 出 品
-.main-container
-  .popular
-    %h2.popular__title 人気のカテゴリー
-    .popular__body
-      %ul.popular__body__list
-        %li.popular__body__list__item
-          %a.popular__body__list__btn レディース
-        %li.popular__body__list__item
-          %a.popular__body__list__btn メンズ
-        %li.popular__body__list__item
-          %a.popular__body__list__btn 家電・スマホ・カメラ
-        %li.popular__body__list__item
-          %a.popular__body__list__btn おもちゃ・ホビー・グッズ
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 レディース新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 メンズ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 家電・スマホ・カメラ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 おもちゃ・ホビー・グッズ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .popular
-    %h2.popular__title 人気のブランド
-    .popular__body
-      %ul.popular__body__list
-        %li.popular__body__list__item
-          %a.popular__body__list__btn シャネル
-        %li.popular__body__list__item
-          %a.popular__body__list__btn ルイヴィトン
-        %li.popular__body__list__item
-          %a.popular__body__list__btn シュプリーム
-        %li.popular__body__list__item
-          %a.popular__body__list__btn ナイキ
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 シャネル新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 ルイヴィトン新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 シュプリーム新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 ナイキ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-= render 'layouts/footer'
+-# .main-container
+-#   .popular
+-#     %h2.popular__title 人気のカテゴリー
+-#     .popular__body
+-#       %ul.popular__body__list
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn レディース
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn メンズ
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn 家電・スマホ・カメラ
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn おもちゃ・ホビー・グッズ
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 レディース新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 メンズ新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 家電・スマホ・カメラ新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 おもちゃ・ホビー・グッズ新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-#   .popular
+-#     %h2.popular__title 人気のブランド
+-#     .popular__body
+-#       %ul.popular__body__list
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn シャネル
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn ルイヴィトン
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn シュプリーム
+-#         %li.popular__body__list__item
+-#           %a.popular__body__list__btn ナイキ
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 シャネル新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 ルイヴィトン新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 シュプリーム新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-#   .newcomers
+-#     .newcomers__group
+-#       .newcomers__group__header{name: "scroll-1"}
+-#         %h3 ナイキ新着アイテム
+-#         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+-#       .newcomers__group__list
+-#         - @items.each do |item|
+-#           = link_to item_path(item.id) do
+-#             .newcomers__group__list__item
+-#               = image_tag item.image, class: "newcomers__group__list__item__image"
+-#               .newcomers__group__list__item__price
+-#                 = item.price
+-#               .newcomers__group__list__item__name
+-#                 .newcomers__group__list__item__name__text
+-#                   = item.name
+-# = render 'layouts/footer'

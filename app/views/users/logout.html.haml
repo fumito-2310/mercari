@@ -1,0 +1,14 @@
+= render 'layouts/header'
+
+.container
+  .container--wrapper
+    .container--side
+      = render "side-list"
+    .user-content
+      .user-chapter-container
+        .user-mypage-logout-inner
+          .mypage-logout-content
+            = link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "btn-default btn-red text-default__submit"
+            .emptybox-mypage-logout
+
+= render 'layouts/footer'

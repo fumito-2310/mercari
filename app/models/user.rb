@@ -9,6 +9,9 @@ class User < ApplicationRecord
   # ユーザは複数のコメントが可能　澤木
   has_many :comments
 
+  # ユーザは複数のアイテムを出品している　澤木
+  has_many :items
+
 
          VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

@@ -1,0 +1,67 @@
+= render 'layouts/header'
+
+.container
+  .container--wrapper
+    .container--side
+      = render "layouts/side-list"
+    .main
+      .itemDetails-container
+      .itemDetails-container__header
+        %p 
+          = @item.name
+        -# mulinsen　(　ムーリンセン　) 本革 レース　アップ　シューズ 日本製
+      .itemDetails-container__main
+        .itemDetails-container__main__left
+          .itemDetails-container__main__left__image
+            -# %img{:alt => "", :src => "img/sample.jpg"}/
+            = image_tag @item.image
+        .itemDetails-container__main__right
+          .itemDetails-container__main__right__table
+            %table
+              %tr.exhibitor
+                %th 出品者
+                %td 
+                  = @user.nickname
+              %tr.category
+                %th カテゴリー
+                %td 
+                  = @item.details_category_major
+                  = @item.details_category_medium
+                  = @item.details_category_minor
+              %tr
+                %th ブランド
+                %td シャネル
+              %tr
+                %th 商品のサイズ
+                %td
+                  = @item.details_size
+              %tr
+                %th 商品の状態
+                %td
+                  = @item.details_state
+              %tr
+                %th 配送料の負担
+                %td
+                  = @item.delivery_fee
+              %tr
+                %th 配送の方法
+                %td らくらくメルカリ便
+              %tr
+                %th 配送元地域
+                %td
+                  = @item.delivery_area
+              %tr
+                %th 発送日の目安
+                %td
+                  = @item.delivery_days
+        .itemDetails-container__main__price
+          %p.itemDetails-container__main__price--mark¥
+          %p.itemDetails-container__main__price--price
+            = @item.price
+          %p.itemDetails-container__main__price--tax (税込)
+          %p.itemDetails-container__main__price--postage 送料込み
+        .itemDetails-container__main__btn
+          %a{:href => ""} 商品の編集
+        .itemDetails-container__main__btn--delete
+          %a{:href => ""} この商品を削除する
+= render 'layouts/footer'

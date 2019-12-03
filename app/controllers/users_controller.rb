@@ -2,6 +2,7 @@ class UsersController < ApplicationController
  def show
   @nickname = current_user.nickname
   @items = Item.where(seller_id: current_user.id)
+  @user = current_user
  end
 
  def edit

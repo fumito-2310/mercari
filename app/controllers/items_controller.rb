@@ -47,6 +47,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    # binding.pry
+    @item = Item.find(params[:id])
+    @user = User.find(@item.seller_id)
   end
 
   def show

@@ -118,13 +118,39 @@
 }
 
 .itemDetails-container__main__btn a {
+  display: block;
   color: #FFF;
   font-size: 24px;
   line-height: 70px;
   text-decoration:none;
+  height: 100%;
+  width: 100%;
 }
 
 .itemDetails-container__main__btn a:visited {
+  color: #FFF;
+  text-decoration:none;
+}
+
+.itemDetails-container__main__btn--delete {
+  background-color: grey;
+  width: 100%;
+  height: 70px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.itemDetails-container__main__btn--delete a {
+  display: block;
+  color: #FFF;
+  font-size: 24px;
+  line-height: 70px;
+  text-decoration:none;
+  height: 100%;
+  width: 100%;
+}
+
+.itemDetails-container__main__btn--delete a:visited {
   color: #FFF;
   text-decoration:none;
 }

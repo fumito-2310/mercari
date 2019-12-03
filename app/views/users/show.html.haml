@@ -3,7 +3,7 @@
 .container
   .container--wrapper
     .container--side
-      = render "side-list"
+      = render "layouts/side-list"
     .main
       .main--icon
         =image_tag "user-bg.jpg",class: "main-icon__back1"
@@ -81,7 +81,7 @@
           %ul.product-list__contents
           - @items.each do |item|
             %li.product-list__contents--tab3
-              =link_to "#",class:"product-list__contents--tab3--link" do
+              = link_to "/users/#{@user.id}/items/#{item.id}/edit", class:"product-list__contents--tab3--link" do
                 %figure.product-list__contents--tab3--link__figure
                   = image_tag( item.image, width:"48",height:"48", alt:"メルカリ",class:"main--contents__icon")
                 %div.product-list__contents--tab3--link__text

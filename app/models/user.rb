@@ -6,7 +6,6 @@ class User < ApplicationRecord
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :sns_credentials, dependent: :destroy
-  has_many :cards
   # ユーザは複数のコメントが可能　澤木
   has_many :comments
 
@@ -44,10 +43,10 @@ class User < ApplicationRecord
         #  validates :address_phone_number,    presence: true
 
 
-        #  validates :card_number,             presence: true
-        #  validates :expiry_date_month,       presence: true
-        #  validates :expiry_date_year,        presence: true
-        #  validates :security_code,           presence: true
+         validates :card_number,             presence: true
+         validates :expiry_date_month,       presence: true
+         validates :expiry_date_year,        presence: true
+         validates :security_code,           presence: true
 
 
         
@@ -100,6 +99,7 @@ class User < ApplicationRecord
        
 
 
+         has_many :cards
 
   # has_many :bought_items, foreign_key: "buyer_id", class_name: "Item"
   # has_many :selling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"

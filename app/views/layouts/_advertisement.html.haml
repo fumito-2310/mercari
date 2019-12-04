@@ -1,5 +1,5 @@
 .advertisement
-  %img.advertisement__smartphoneImage{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+  = image_tag "smpImage.png", alt: "", class: "advertisement__smartphoneImage"
   .advertisement__textbox
     .advertisement__textbox__upper
       スマホでかんたん
@@ -10,7 +10,6 @@
       %br
       購入時も安心な独自システムのアプリです
     .advertisement__textbox__lower
-      %a{href: "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", rel: "noopener noreferrer", target: "_blank"}
-        %img{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
-      %a{href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", rel: "noopener noreferrer", target: "_blank"}
-        %img{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+      = link_to image_tag("appStore.svg", alt: ""), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank"
+      = link_to image_tag("googlePlay.svg", alt: ""), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank"
+ 

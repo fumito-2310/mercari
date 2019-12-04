@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
 
    get 'top' => 'top#index'
-
+   get 'users' => 'users#logout'
 
    def after_sign_out_path_for(resource)
     new_user_session_path
@@ -39,9 +39,17 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+
   root 'items#index'
   resources :users
-  resources :items
+  resources :items, only: [:index, :show, :new, :edit, :destroy, :create] do
+    resources :comments, only: [:create]
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
+
 
   # root to: 'signup#step4'  
   # devise_for :users

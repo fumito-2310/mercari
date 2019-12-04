@@ -23,13 +23,14 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
@@ -37,13 +38,14 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
@@ -51,13 +53,14 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
@@ -65,13 +68,14 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
   .popular
     %h2.popular__title 人気のブランド
     .popular__body
@@ -91,13 +95,14 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
@@ -105,13 +110,14 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
@@ -119,13 +125,14 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
@@ -133,11 +140,12 @@
         %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
       .newcomers__group__list
         - @items.each do |item|
-          .newcomers__group__list__item
-            = image_tag item.image, class: "newcomers__group__list__item__image"
-            .newcomers__group__list__item__price
-              = item.price
-            .newcomers__group__list__item__name
-              .newcomers__group__list__item__name__text
-                = item.name
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
 = render 'layouts/footer'

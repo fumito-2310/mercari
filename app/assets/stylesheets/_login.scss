@@ -163,3 +163,34 @@
   text-align: center;
   font-size: 12px;
 }
+
+.login-form{
+  text-align: center;
+}
+
+.field__mail{
+  padding-top: 20px;
+}
+
+.field__mail__box{
+  border: solid 0.5px #50504d;
+}
+
+.field__password{
+  padding-top: 20px;
+}
+
+.field__password__box{
+  border: solid 0.5px #50504d;
+}
+
+.actions__button{
+  padding-top: 20px;
+
+}
+.actions__button__font{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  border-radius: 5px;
+}

@@ -10,18 +10,37 @@
         %h2.l-single-head 商品の情報を入力
         = form_for @item do |f|
           .sell-upload-box
+            = f.file_field :image, class: "sell-upload-drop-file"
             %h3.sell-upload-head
               出品画像
               %span.form-require 必須
             %p 最大10枚までアップロードできます
-            .sell-dropbox-container.clearfix.state-image-number-10
-              .sell-upload-items-container
-                .sell-upload-items.have-item-0
-                  %ul
-              .sell-upload-drop-box.have-item-0
-                = f.file_field :image, class: "sell-upload-drop-file"
-                %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
-                %i.icon-camera
+            
+            -# = f.fields_for :pictures, @item.images.first do |image|
+            -#   .item__img__dropzone.clearfix
+            -#     #preview
+            -#       .item__img__dropzone__input
+            -#         = image.label :picture, for: "upload-image" do
+            -#           .input-area
+            -#             -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
+            -#           .item__img__dropzone__input__description
+            -#             .item__img__dropzone__input__description__text
+            -#               ドラッグアンドドロップ
+            -#               %br
+            -#               またはクリックしてファイルをアップロード
+
+            -#   .item__img__dropzone2.clearfix
+            -#     #preview2
+            -#       .item__img__dropzone2__input2
+            -#         = image.label :picture, for: "upload-image" do
+            -#           .input-area
+            -#             -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
+            -#           .item__img__dropzone2__input2__description
+            -#             .item__img__dropzone2__input2__description__text
+            -#               ドラッグアンドドロップ
+            -#               %br
+            -#               またはクリックしてファイルをアップロード
+
             / react-empty: 18
             / react-empty: 19
             / react-empty: 20
@@ -47,23 +66,23 @@
           .sell-content.clearfix
             %h3.sell-sub-head 商品の詳細
             .sell-form-box
-              .form-group
+              .listing-product-detail__category
                 %label
                   カテゴリー
-                  %span.form-require 必須
-                %div
-                  .select-wrap
-                    %i.icon-arrow-bottom
-                    %option{:value => "8"}
-                    = f.select :details_category_major, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
-                  .select-wrap
-                    %i.icon-arrow-bottom
-                    %option{:value => "8"}
-                    = f.select :details_category_medium, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
-                  .select-wrap
-                    %i.icon-arrow-bottom
-                    %option{:value => "8"}
-                    = f.select :details_category_minor, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
+                %span.form-require 必須
+                .category-select-wrap
+                  .select-wrap__box#parent_wrapper
+                    -# = f.collection_select :category, @category_parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent_category", name: 'item[category_ids][]'
+                    = f.collection_select :details_category_major, @category_parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent_category"
+                    %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+                -# .select-wrap
+                -#   %i.icon-arrow-bottom
+                -#   %option{:value => "8"}
+                -#   = f.select :details_category_medium, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
+                -# .select-wrap
+                -#   %i.icon-arrow-bottom
+                -#   %option{:value => "8"}
+                -#   = f.select :details_category_minor, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
               .form-group
                 %label
                   商品のサイズ
@@ -160,16 +179,19 @@
                     %label.l-left
                       価格
                       %span.form-require 必須
-                    .l-right.sell-price-input
+                    .sell-price-input
                       ¥
                       %div
-                        = f.text_field :price, placeholder: "例）300", class: "input-default"
+                        = f.text_field :price, placeholder: "例）300", class: "input-default", id: 'profit_calc', autocomplete: 'off'
                 %li.clearfix
-                  .l-left 販売手数料 (10%)
-                  .l-right -
+                  .l-left
+                    販売手数料 (10%)
+                  .l-right
                 %li.clearfix.bold
-                  .l-left 販売利益
-                  .l-right -
+                  .l-left
+                    販売利益
+                  .l-right_2
+                    = f.number_field :price, style: "display: none", id: "price"
           .sell-content.sell-btn-box
             %div
               %p 禁止されている出品、行為を必ずご確認ください。

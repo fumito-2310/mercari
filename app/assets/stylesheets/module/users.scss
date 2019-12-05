@@ -170,6 +170,9 @@
 
 .product-list__contents {
     display: block;
+    li {
+        list-style: none;
+    }
     .product-list__contents--tab3 {
         border-bottom: 1px solid #eee;
         color: black;

@@ -28,10 +28,14 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :users do
-    resources :items
+    resources :items do
+      member do
+        get 'rewrite'
+      end
+    end
   end
 
-  resources :items, only: [:index, :show, :new, :edit, :destroy, :create] do
+  resources :items, only: [:index, :show, :new, :edit, :update, :destroy, :create] do
     resources :comments, only: [:create]
     collection do
       get 'get_category_children', defaults: { format: 'json' }

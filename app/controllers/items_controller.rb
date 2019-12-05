@@ -58,7 +58,21 @@ class ItemsController < ApplicationController
     @user = User.find(@item.seller_id)
   end
 
+  def rewrite
+    @item = Item.find(params[:id])
+    @user = User.find(@item.seller_id)
+    @category_parents = Category.all.where(ancestry: nil)
+  end
+
   def update
+    @item = Item.find(params[:id])
+    @user = User.find(@item.seller_id)
+    if @item.update(item_params)
+      binding.pry
+      redirect_to "/users/#{@user.id}/items/#{@item.id}/edit"
+    else
+      render :edit
+    end
   end
 
   def destroy

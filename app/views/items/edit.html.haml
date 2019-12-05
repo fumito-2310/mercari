@@ -61,7 +61,7 @@
           %p.itemDetails-container__main__price--tax (税込)
           %p.itemDetails-container__main__price--postage 送料込み
         .itemDetails-container__main__btn
-          %a{:href => ""} 商品の編集
+          = link_to "商品の編集", "/users/#{@user.id}/items/#{@item.id}/rewrite"
         .itemDetails-container__main__btn--delete
           %a{:href => ""} この商品を削除する
 = render 'layouts/footer'

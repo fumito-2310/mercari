@@ -44,10 +44,10 @@ class User < ApplicationRecord
         #  validates :address_phone_number,    presence: true
 
 
-         validates :card_number,             presence: true
-         validates :expiry_date_month,       presence: true
-         validates :expiry_date_year,        presence: true
-         validates :security_code,           presence: true
+        #  validates :card_number,             presence: true
+        #  validates :expiry_date_month,       presence: true
+        #  validates :expiry_date_year,        presence: true
+        #  validates :security_code,           presence: true
 
 
         

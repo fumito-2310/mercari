@@ -79,3 +79,5 @@ gem "font-awesome-rails"
 gem 'ancestry'
 gem "dropzonejs-rails"
 gem 'gon'
+gem 'payjp'
+gem "jquery-rails"

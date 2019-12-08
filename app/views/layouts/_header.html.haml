@@ -3,8 +3,7 @@
     .top__page__header
       .top__page__header__top
         .top__page__header__top__logo
-          %a.merukari__logo{:href => "/"}
-            = image_tag 'merukari_logo.svg',class: 'img.example1'
+          = link_to image_tag('merukari_logo.svg', alt:""), "/", class: 'img.example1'
         .top__page__header__top__form
           %form{:action => "/", :method => "post"}
             %input.box{:name => "search", :placeholder => "何かお探しですか？", :type => "text"}/

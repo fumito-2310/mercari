@@ -1,0 +1,7 @@
+%form.buy-form
+  = "¥#{@item.price}"
+  送料込み
+  ポイントはありませんoo
+  支払い金額
+  = "¥#{@item.price}"
+  = link_to "購入する", item_pay_path(@item.id), method: :post, class: "item-buy-btn btn-default"

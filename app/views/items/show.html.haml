@@ -58,7 +58,6 @@
           %p.itemDetails-container__main__price--postage 送料込み
         .itemDetails-container__main__btn
           = link_to "購入画面に進む",  item_purchase_path(@item.id), method: :get
-          -# %a{:href => "items#purchase_confirmation"} 購入画面に進む
         .itemDetails-container__main__explanation
           %p
             = @item.explanation

@@ -80,14 +80,8 @@ class ItemsController < ApplicationController
   #   end
   # end
 
-
-
-
-  
-
-
   def purchase
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     #テーブルからpayjpの顧客IDを検索
     @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
@@ -123,7 +117,7 @@ class ItemsController < ApplicationController
 
   def done
   end
-  
+
   private
 
   def item_params

@@ -123,19 +123,7 @@ class ItemsController < ApplicationController
 
   def done
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
   private
 
   def item_params

@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :pay, :purchase]
 
   def index
     @items = Item.all
@@ -50,7 +51,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
     @user = User.find(@item.seller_id)
   end
@@ -81,9 +81,8 @@ class ItemsController < ApplicationController
   # end
 
   def purchase
-    card = Card.find_by(user_id: current_user.id)
+    card = current_user.card
     #テーブルからpayjpの顧客IDを検索
-    @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     unless @item.seller_id == @item.buyer_id
       redirect_to root_path
@@ -96,15 +95,14 @@ class ItemsController < ApplicationController
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(card["customer_id"])
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
 
   def pay
-    @item = Item.find(params[:id])
-    card = Card.where(user_id: current_user.id).first
+    card = current_user.card
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     amount: @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
@@ -135,6 +133,10 @@ class ItemsController < ApplicationController
                                  .merge(details_category_major: "ダミー")
                                  .merge(details_category_medium: "ダミー")
                                  .merge(details_category_minor: "ダミー")
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   # def registered_image_params

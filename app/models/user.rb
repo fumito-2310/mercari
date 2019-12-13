@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :sns_credentials, dependent: :destroy
-  has_many :cards
+  has_one :card, dependent: :destroy
+
   # ユーザは複数のコメントが可能　澤木
   has_many :comments
 

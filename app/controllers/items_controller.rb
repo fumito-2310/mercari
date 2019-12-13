@@ -89,6 +89,13 @@ class ItemsController < ApplicationController
   def purchase
     card = Card.where(user_id: current_user.id).first
     #テーブルからpayjpの顧客IDを検索
+    @item = Item.find(params[:id])
+    @user = User.find(@item.seller_id)
+    unless @item.seller_id == @item.buyer_id
+      redirect_to root_path
+    else
+    end
+
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
@@ -99,8 +106,6 @@ class ItemsController < ApplicationController
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
-    @item = Item.find(params[:id])
-    @user = User.find(@item.seller_id)
   end
 
   def pay

@@ -47,32 +47,5 @@ class CardController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
   end
-end
-
-
-def buy #クレジット購入
-
-  if card.blank?
-    redirect_to action: "new"
-    flash[:alert] = '購入にはクレジットカード登録が必要です'
-  else
-    @product = Product.find(params[:product_id])
-    card = current_user.credit_card
-    Payjp.api_key = "sk_test_0e2eb234eabf724bfaa4e676"
-    Payjp::Charge.create(
-    amount: @product.price,
-    customer: card.customer_id,
-    currency: 'jpy',
-    )
-    if @product.update(status: 1, buyer_id: current_user.id)
-      flash[:notice] = '購入しました。'
-      redirect_to controller: "products", action: 'show'
-    else
-      flash[:alert] = '購入に失敗しました。'
-      redirect_to controller: "products", action: 'show'
-    end
-  end
-end
-
-
+ end
 end

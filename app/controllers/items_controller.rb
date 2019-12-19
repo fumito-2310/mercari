@@ -68,7 +68,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     if @item.update(item_params)
-      binding.pry
       redirect_to "/users/#{@user.id}/items/#{@item.id}/edit"
     else
       render :edit

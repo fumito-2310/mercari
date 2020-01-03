@@ -1,2 +1,12 @@
-完了しました
-= link_to "トップページへ",  root_path, method: :get
+= render 'layouts/header'
+
+%body
+  %main.itemDetails-main
+    .itemDetails-container
+      .itemDetails-container__header
+        .item__details__box__top
+          %p完了しました
+          = link_to "トップページへ",  root_path, method: :get,class: "toppage__box__change"
+
+
+= render 'layouts/footer'

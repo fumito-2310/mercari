@@ -98,6 +98,8 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(card["customer_id"])
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
       @default_card_information = customer.cards.retrieve(card.card_id)
+      @card_brand = @default_card_information.brand
+      @card_src = "Visa.png"
     end
   end
 

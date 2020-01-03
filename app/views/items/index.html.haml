@@ -25,11 +25,20 @@
           = link_to item_path(item.id) do
             .newcomers__group__list__item
               = image_tag item.image, class: "newcomers__group__list__item__image"
+
+
               .newcomers__group__list__item__price
                 = item.price
               .newcomers__group__list__item__name
                 .newcomers__group__list__item__name__text
                   = item.name
+
+                -unless item.buyer_id == 1 
+                  .items-box_photo__sold
+                    .items-box_photo__sold__inner
+                      SOLD
+
+
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}

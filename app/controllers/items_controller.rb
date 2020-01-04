@@ -19,8 +19,13 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    @category_parents = Category.all.where(ancestry: nil)
+    if user_signed_in?
+      @item = Item.new
+      @category_parents = Category.all.where(ancestry: nil)
+    else
+      redirect_to new_user_session_path
+    end
+
     # gon.item = @item
     # gon.images = @item.images
 
@@ -81,26 +86,33 @@ class ItemsController < ApplicationController
   # end
 
   def purchase
-    card = current_user.card
-    #テーブルからpayjpの顧客IDを検索
-    @user = User.find(@item.seller_id)
-    unless @item.seller_id == @item.buyer_id
-      redirect_to root_path
+    if user_signed_in?
+      
+      card = current_user.card
+      #テーブルからpayjpの顧客IDを検索
+      @user = User.find(@item.seller_id)
+      unless @item.seller_id == @item.buyer_id
+        redirect_to root_path
+      else
+      end
+  
+      if card.blank?
+        #登録された情報がない場合にカード登録画面に移動
+        redirect_to controller: "card", action: "new"
+      else
+        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        #保管した顧客IDでpayjpから情報取得
+        customer = Payjp::Customer.retrieve(card["customer_id"])
+        #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+        @default_card_information = customer.cards.retrieve(card.card_id)
+        @card_brand = @default_card_information.brand
+        @card_src = "Visa.png"
+      end
+
     else
+      redirect_to new_user_session_path
     end
 
-    if card.blank?
-      #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "card", action: "new"
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card["customer_id"])
-      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(card.card_id)
-      @card_brand = @default_card_information.brand
-      @card_src = "Visa.png"
-    end
   end
 
   def pay

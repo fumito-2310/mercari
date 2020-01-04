@@ -22,9 +22,9 @@ Rails.application.routes.draw do
 
   
    get 'users' => 'users#profile'
-   get 'users' => 'users#identification'
+   get 'users_identification' => 'users#identification'
    get 'top' => 'top#index'
-   get 'users' => 'users#logout'
+   get 'users_logout' => 'users#logout'
 
    def after_sign_out_path_for(resource)
     new_user_session_path

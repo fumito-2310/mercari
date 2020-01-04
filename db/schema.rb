@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191116052542) do
+ActiveRecord::Schema.define(version: 20191123062417) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",     null: false
-    t.string   "customer_id", null: false
-    t.string   "card_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
+    t.integer  "user_id",           null: false
+    t.integer  "card_number",       null: false
+    t.date     "expiry_date_month", null: false
+    t.date     "expiry_date_year",  null: false
+    t.integer  "security_code",     null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -37,28 +38,30 @@ ActiveRecord::Schema.define(version: 20191116052542) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "file_name"
+    t.string   "file_name",  null: false
+    t.integer  "item_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image",                                 null: false
-    t.string   "name",                                  null: false
-    t.text     "explanation",             limit: 65535, null: false
-    t.string   "details_category_major",                null: false
-    t.string   "details_category_medium",               null: false
-    t.string   "details_category_minor",                null: false
-    t.string   "details_size",                          null: false
-    t.string   "details_state",                         null: false
-    t.string   "delivery_fee",                          null: false
-    t.string   "delivery_area",                         null: false
-    t.string   "delivery_days",                         null: false
-    t.integer  "price",                                 null: false
-    t.integer  "seller_id",                             null: false
-    t.integer  "buyer_id",                              null: false
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.string   "image",                                 default: "", null: false
+    t.string   "name",                                               null: false
+    t.text     "explanation",             limit: 65535,              null: false
+    t.string   "details_category_major",                default: "", null: false
+    t.string   "details_category_medium",               default: "", null: false
+    t.string   "details_category_minor",                default: "", null: false
+    t.string   "details_size",                          default: "", null: false
+    t.string   "details_state",                         default: "", null: false
+    t.string   "delivery_fee",                          default: "", null: false
+    t.string   "delivery_area",                         default: "", null: false
+    t.string   "delivery_days",                         default: "", null: false
+    t.integer  "price",                                              null: false
+    t.integer  "seller_id"
+    t.integer  "buyer_id"
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -88,8 +91,8 @@ ActiveRecord::Schema.define(version: 20191116052542) do
     t.string   "address_prefecture",                    default: "0", null: false
     t.string   "address_name",                                        null: false
     t.string   "address_block",                                       null: false
-    t.string   "address_building",                      default: ""
-    t.string   "address_phone_number",                  default: ""
+    t.string   "address_building"
+    t.string   "address_phone_number"
     t.text     "introduce",               limit: 65535
     t.string   "encrypted_password",                    default: ""
     t.string   "reset_password_token"
@@ -97,15 +100,15 @@ ActiveRecord::Schema.define(version: 20191116052542) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
+    t.string   "provider"
+    t.string   "uid"
     t.integer  "card_number"
     t.integer  "expiry_date_month"
     t.integer  "expiry_date_year"
     t.integer  "security_code"
-    t.string   "provider"
-    t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "cards", "users"
+  add_foreign_key "images", "items"
 end

@@ -133,6 +133,7 @@ main {
 .input-default {
   margin: 8px 0 0;
   height: 48px;
+  width: 100%;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -144,11 +145,9 @@ main {
 .sell-price-input .input-default {
   margin: 0;
   text-align: right;
+  float: right;
 }
 
-.form-group .input-default {
-  width: 100%;
-}
 
 .textarea-default {
   display: block;
@@ -343,6 +342,9 @@ pre {
   float: right;
 }
 
+.l-right_3 {
+  float: right;
+}
 
 .sell-price .form-group .l-left {
   width: 50%;
@@ -355,4 +357,13 @@ pre {
 
 .sell-price .form-group .l-right_2 {
   width: 50%;
+}
+
+.sell-price .form-group .l-right_3 {
+  width: 50%;
+}
+
+.sell-price li {
+  padding: 24px 0;
+  border-top: 1px solid #ccc;
 }

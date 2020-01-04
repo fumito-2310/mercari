@@ -1,8 +1,8 @@
 .bottomAside {
   display: flex;
   justify-content: center;
+  height: 260px;
   align-items: center;
-  height: 30vh;
   background-image: url('/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg');
   background-size: cover;
 }
@@ -55,14 +55,13 @@ p.down {
 
 
 footer {
-  height: 40vh;
   background-color: black;
 }
 
 .footerNav {
   display: flex;
   color: white;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   padding-top: 15px; 
 }
@@ -136,9 +135,9 @@ footer {
 .footer__mercari {
   display: flex;
   color: white;
-  width: 60%;
-  margin: 0 auto;
-  
+  width: 80%;
+  margin: 30px auto 0;
+  padding-bottom: 20px;
 }
 
 .copyright {

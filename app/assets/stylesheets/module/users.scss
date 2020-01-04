@@ -117,6 +117,7 @@
 }
 
 .main--history {
+    height: 300px;
     margin-top: 24px;
     background-color: white;
     &__top {
@@ -130,5 +131,84 @@
         width: 50%;
         height: 72px;
         line-height: 72px;
+    }
+}
+
+
+.product-list {
+    background-color: white;
+    width: 700px;
+    display: inline-block;
+    .main--icon {
+        height: 200px;
+        position: relative;
+        text-align: center;
+        color: black;
+        &__back1 {
+            position: relative;
+            max-width: 100%;
+        }
+        &__figure {
+            height: 100px;
+            position: absolute;
+            top: 40px;
+            left: 250px;
+            &__user {
+                color: black;
+                &__rate {
+                    float: left;
+                    margin-right: 10px;
+                    color: black;
+                }
+            }
+        }
+        &__back2 {
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+    }
+}
+
+.product-list__contents {
+    display: block;
+    .product-list__contents--tab3 {
+        border-bottom: 1px solid #eee;
+        color: black;
+        position: relative;
+        .product-list__contents--tab3--link {
+            display: block;
+            padding: 16px;
+            color: black;
+            text-decoration: none;
+            &__figure {
+                position: relative;
+                float: left;
+                width: 48px;
+                height: 48px;
+                margin: 0;
+            }
+            &__text {
+                margin: 0 40px 0 68px;
+                .time {
+                    display: inline-block;
+                }
+            }
+            .fa-chevron-right {
+                float: right;
+                position: absolute;
+                top: 50%;
+                right: 16px;
+            }
+        }
+        &__gray {
+            display: block;
+            height: 56px;
+            margin: 0 auto;
+            background: #eee;
+            color: #333;
+            line-height: 56px;
+            text-align: center;
+            text-decoration: none;
+        }
     }
 }

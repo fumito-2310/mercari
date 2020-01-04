@@ -20,6 +20,8 @@ Rails.application.routes.draw do
       end
     end
 
+  
+   get 'users' => 'users#profile'
    get 'users' => 'users#identification'
    get 'top' => 'top#index'
    get 'users' => 'users#logout'

@@ -1,0 +1,64 @@
+.main__profile{
+  float: right;
+  width: 700px;
+  height: 520px;
+  background-color: white;
+}
+
+
+.main__profile__top{
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.main--icon {
+  position: relative;
+  text-align: center;
+  color: black;
+  &__back1 {
+      position: relative;
+
+  }
+  &__figure {
+      height: 100px;
+      position: absolute;
+      top: 40px;
+      left: 250px;
+      &__user {
+          color: black;
+          &__rate {
+              float: left;
+              margin-right: 10px;
+              color: black;
+          }
+      }
+  }
+  &__back2 {
+      border-radius: 50%;
+      vertical-align: middle;
+  }
+}
+
+.input__nickname{
+    width: 220px;
+    margin: 0 0 0 8px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+textarea{
+  border: 1px solid #ccc;
+  height: 100px;
+  width: 670px;
+  margin-top: 30px;
+  margin-left: 12px;
+}
+
+
+.main__profile__bottom{
+max-width: 670px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+}

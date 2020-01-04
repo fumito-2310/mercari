@@ -18,6 +18,9 @@ class UsersController < ApplicationController
    else
  end
 
+ def profile
+  @nickname = current_user.nickname
+ end
  def logout
  end
 

@@ -8,17 +8,17 @@
     .popular__body
       %ul.popular__body__list
         %li.popular__body__list__item
-          = link_to "レディース", "/", class: "popular__body__list__btn"
+          = link_to "レディース", "#ladies", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          = link_to "メンズ", "/", class: "popular__body__list__btn"
+          = link_to "メンズ", "#mens", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          = link_to "家電・スマホ・カメラ", "/", class: "popular__body__list__btn"
+          = link_to "家電・スマホ・カメラ", "#appliance", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          = link_to "おもちゃ・ホビー・グッズ", "/", class: "popular__body__list__btn"
+          = link_to "おもちゃ・ホビー・グッズ", "#toys", class: "popular__body__list__btn"
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 レディース新着アイテム
+        %h3{ id: "ladies" } レディース新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
@@ -33,7 +33,7 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 メンズ新着アイテム
+        %h3{ id: "mens" }  メンズ新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
@@ -48,7 +48,7 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 家電・スマホ・カメラ新着アイテム
+        %h3{ id: "appliance" }  家電・スマホ・カメラ新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
@@ -63,7 +63,7 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 おもちゃ・ホビー・グッズ新着アイテム
+        %h3{ id: "toys" }  おもちゃ・ホビー・グッズ新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
@@ -80,17 +80,17 @@
     .popular__body
       %ul.popular__body__list
         %li.popular__body__list__item
-          = link_to "シャネル", "/", class: "popular__body__list__btn"
+          = link_to "シャネル", "#chanel", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          = link_to "ルイヴィトン", "/", class: "popular__body__list__btn"
+          = link_to "ルイヴィトン", "#louisvuitton", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          = link_to "シュプリーム", "/", class: "popular__body__list__btn"
+          = link_to "シュプリーム", "#supreme", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          = link_to "ナイキ", "/", class: "popular__body__list__btn"
+          = link_to "ナイキ", "#nike", class: "popular__body__list__btn"
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 シャネル新着アイテム
+        %h3{ id: "chanel" } シャネル新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
@@ -105,7 +105,7 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 ルイヴィトン新着アイテム
+        %h3{ id: "louisvuitton" } ルイヴィトン新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
@@ -120,7 +120,7 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 シュプリーム新着アイテム
+        %h3{ id: "supreme" } シュプリーム新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
@@ -135,7 +135,7 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 ナイキ新着アイテム
+        %h3{ id: "nike" } ナイキ新着アイテム
         = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|

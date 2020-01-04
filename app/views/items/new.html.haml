@@ -15,42 +15,7 @@
               出品画像
               %span.form-require 必須
             %p 最大10枚までアップロードできます
-            
-            -# = f.fields_for :pictures, @item.images.first do |image|
-            -#   .item__img__dropzone.clearfix
-            -#     #preview
-            -#       .item__img__dropzone__input
-            -#         = image.label :picture, for: "upload-image" do
-            -#           .input-area
-            -#             -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
-            -#           .item__img__dropzone__input__description
-            -#             .item__img__dropzone__input__description__text
-            -#               ドラッグアンドドロップ
-            -#               %br
-            -#               またはクリックしてファイルをアップロード
 
-            -#   .item__img__dropzone2.clearfix
-            -#     #preview2
-            -#       .item__img__dropzone2__input2
-            -#         = image.label :picture, for: "upload-image" do
-            -#           .input-area
-            -#             -# = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
-            -#           .item__img__dropzone2__input2__description
-            -#             .item__img__dropzone2__input2__description__text
-            -#               ドラッグアンドドロップ
-            -#               %br
-            -#               またはクリックしてファイルをアップロード
-
-            / react-empty: 18
-            / react-empty: 19
-            / react-empty: 20
-            / react-empty: 21
-            / react-empty: 22
-            / react-empty: 23
-            / react-empty: 24
-            / react-empty: 25
-            / react-empty: 26
-            / react-empty: 27
           .sell-content
             .form-group
               %label
@@ -72,17 +37,8 @@
                 %span.form-require 必須
                 .category-select-wrap
                   .select-wrap__box#parent_wrapper
-                    -# = f.collection_select :category, @category_parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent_category", name: 'item[category_ids][]'
                     = f.collection_select :details_category_major, @category_parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent_category"
                     %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-                -# .select-wrap
-                -#   %i.icon-arrow-bottom
-                -#   %option{:value => "8"}
-                -#   = f.select :details_category_medium, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
-                -# .select-wrap
-                -#   %i.icon-arrow-bottom
-                -#   %option{:value => "8"}
-                -#   = f.select :details_category_minor, ["---", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, class: "select-default"
               .form-group
                 %label
                   商品のサイズ
@@ -179,10 +135,10 @@
                     %label.l-left
                       価格
                       %span.form-require 必須
-                    .sell-price-input
-                      ¥
-                      %div
-                        = f.text_field :price, placeholder: "例）300", class: "input-default", id: 'profit_calc', autocomplete: 'off'
+                    .l-right_3
+                      .sell-price-input
+                        %div
+                          = f.text_field :price, placeholder: "例）300", class: "input-default", id: 'profit_calc', autocomplete: 'off'
                 %li.clearfix
                   .l-left
                     販売手数料 (10%)

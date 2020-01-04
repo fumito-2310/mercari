@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
  def show
   @nickname = current_user.nickname
+  @items = Item.where(seller_id: current_user.id)
+ end
+
+ def edit
+ end
+
+ def identification
+  @last_name = current_user.last_name
+  @first_name = current_user.first_name
  end
 
  def new
@@ -11,6 +20,8 @@ class UsersController < ApplicationController
 
  def profile
   @nickname = current_user.nickname
+ end
+ def logout
  end
 
  private

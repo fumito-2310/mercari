@@ -57,7 +57,7 @@
           %p.itemDetails-container__main__price--tax (税込)
           %p.itemDetails-container__main__price--postage 送料込み
         .itemDetails-container__main__btn
-          %a{:href => ""} 購入画面に進む
+          = link_to "購入画面に進む",  item_purchase_path(@item.id), method: :get
         .itemDetails-container__main__explanation
           %p
             = @item.explanation

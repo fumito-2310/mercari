@@ -3,29 +3,27 @@
     .top__page__header
       .top__page__header__top
         .top__page__header__top__logo
-          %a.merukari__logo{:href => "/"}
-            = image_tag 'merukari_logo.svg',class: 'img.example1'
+          = link_to image_tag('merukari_logo.svg', alt:""), "/", class: 'img.example1'
         .top__page__header__top__form
           %form{:action => "/", :method => "post"}
             %input.box{:name => "search", :placeholder => "何かお探しですか？", :type => "text"}/
       .top__page__header__under
-        .top__page__header__under__category
-          %i.fas.fa-list カテゴリーから探す
-        .top__page__header__under__brand
-          %i.fas.fa-tag ブランドから探す
-        .top__page__header__under__evaluation
-          %i.far.fa-heart いいね一覧
-        .top__page__header__under__notice
-          %i.fas.fa-bell お知らせ
-        .top__page__header__under__todo
-          %i.fas.fa-check やることリスト
-        .top__page__header__under__mypage
-          -# %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
-          -# %i.fas.fa-user マイページ
+        .top__page__header__under__left
+          .top__page__header__under__left__category
+            ■ カテゴリーから探す
+          .top__page__header__under__left__brand
+            ■ ブランドから探す
+        %ul.top__page__header__under__right
+          %li.top__page__header__under__right__evaluation
+            ■ いいね一覧
+          %li.top__page__header__under__right__notice
+            ■ お知らせ
+          %li.top__page__header__under__right__todo
+            ■ やることリスト
           - if user_signed_in?
             = link_to 'ログアウト', destroy_user_session_path, method: :delete
-            %a{:href => "/users/#{current_user.id}"} マイページ
-            -# = link_to 'マイページ', destroy_user_session_path, method: :delete
+            = link_to 'マイページ', "/users/#{current_user.id}" 
           - else
             = link_to 'ログイン', new_user_session_path, method: :get
             = link_to '新規登録', new_user_registration_path, method: :get
+

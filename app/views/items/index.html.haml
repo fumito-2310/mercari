@@ -1,26 +1,49 @@
 = render 'layouts/header'
-.advertisement 広告コーナー
-%div
-  %a.funcBtn{href: "/items/new"}
-    %span 出 品
+= render 'layouts/advertisement'
+.funcBtn
+  = link_to "出 品", "/items/new", class: "funcBtn"
 .main-container
   .popular
     %h2.popular__title 人気のカテゴリー
     .popular__body
       %ul.popular__body__list
         %li.popular__body__list__item
-          %a.popular__body__list__btn レディース
+          = link_to "レディース", "#ladies", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          %a.popular__body__list__btn メンズ
+          = link_to "メンズ", "#mens", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          %a.popular__body__list__btn 家電・スマホ・カメラ
+          = link_to "家電・スマホ・カメラ", "#appliance", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          %a.popular__body__list__btn おもちゃ・ホビー・グッズ
+          = link_to "おもちゃ・ホビー・グッズ", "#toys", class: "popular__body__list__btn"
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 レディース新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+        %h3{ id: "ladies" } レディース新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
+      .newcomers__group__list
+        - @items.each do |item|
+          = link_to item_path(item.id) do
+            .newcomers__group__list__item
+              = image_tag item.image, class: "newcomers__group__list__item__image"
+
+
+              .newcomers__group__list__item__price
+                = item.price
+              .newcomers__group__list__item__name
+                .newcomers__group__list__item__name__text
+                  = item.name
+
+                -unless item.buyer_id == 1 
+                  .items-box_photo__sold
+                    .items-box_photo__sold__inner
+                      SOLD
+
+
+  .newcomers
+    .newcomers__group
+      .newcomers__group__header{name: "scroll-1"}
+        %h3{ id: "mens" }  メンズ新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
           = link_to item_path(item.id) do
@@ -34,8 +57,8 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 メンズ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+        %h3{ id: "appliance" }  家電・スマホ・カメラ新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
           = link_to item_path(item.id) do
@@ -49,23 +72,8 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 家電・スマホ・カメラ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
-      .newcomers__group__list
-        - @items.each do |item|
-          = link_to item_path(item.id) do
-            .newcomers__group__list__item
-              = image_tag item.image, class: "newcomers__group__list__item__image"
-              .newcomers__group__list__item__price
-                = item.price
-              .newcomers__group__list__item__name
-                .newcomers__group__list__item__name__text
-                  = item.name
-  .newcomers
-    .newcomers__group
-      .newcomers__group__header{name: "scroll-1"}
-        %h3 おもちゃ・ホビー・グッズ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+        %h3{ id: "toys" }  おもちゃ・ホビー・グッズ新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
           = link_to item_path(item.id) do
@@ -81,18 +89,18 @@
     .popular__body
       %ul.popular__body__list
         %li.popular__body__list__item
-          %a.popular__body__list__btn シャネル
+          = link_to "シャネル", "#chanel", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          %a.popular__body__list__btn ルイヴィトン
+          = link_to "ルイヴィトン", "#louisvuitton", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          %a.popular__body__list__btn シュプリーム
+          = link_to "シュプリーム", "#supreme", class: "popular__body__list__btn"
         %li.popular__body__list__item
-          %a.popular__body__list__btn ナイキ
+          = link_to "ナイキ", "#nike", class: "popular__body__list__btn"
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 シャネル新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+        %h3{ id: "chanel" } シャネル新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
           = link_to item_path(item.id) do
@@ -106,8 +114,8 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 ルイヴィトン新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+        %h3{ id: "louisvuitton" } ルイヴィトン新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
           = link_to item_path(item.id) do
@@ -121,8 +129,8 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 シュプリーム新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+        %h3{ id: "supreme" } シュプリーム新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
           = link_to item_path(item.id) do
@@ -136,8 +144,8 @@
   .newcomers
     .newcomers__group
       .newcomers__group__header{name: "scroll-1"}
-        %h3 ナイキ新着アイテム
-        %a.newcomers__group__header__more{href: "/jp/category/1/"} もっと見る ＞
+        %h3{ id: "nike" } ナイキ新着アイテム
+        = link_to "もっと見る ＞", "/jp/category/1/", class: "newcomers__group__header__more"
       .newcomers__group__list
         - @items.each do |item|
           = link_to item_path(item.id) do
